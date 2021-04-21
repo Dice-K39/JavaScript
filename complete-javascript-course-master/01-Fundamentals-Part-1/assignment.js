@@ -27,3 +27,8 @@ console.log(33 < population);
 
 let description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
 console.log(description);
+
+//Strings and Template Literals
+description = `${country} is in ${continent},
+ and its ${population} million people speak ${language}`;
+console.log(description)
