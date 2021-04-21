@@ -1,3 +1,5 @@
+// Values and Variables
+/*
 let js = "amazing";
 
 console.log(40 + 8 + 23 - 10);
@@ -20,3 +22,30 @@ let job1 = "programmer";
 let job2 = "teacher";
 
 console.log(myFirstJob);
+*/
+
+// Data Types
+/*
+let javaScriptIsFun = true;
+
+console.log(javaScriptIsFun);
+
+// console.log(typeof true);
+console.log(typeof javaScriptIsFun);
+// console.log(typeof 23);
+// console.log(typeof "Dice");
+
+javaScriptIsFun = "YES";
+console.log(typeof javaScriptIsFun);
+
+let year;
+
+console.log(year);
+console.log(typeof year);
+
+year = 1991;
+
+console.log(typeof year);
+
+console.log(typeof null);
+*/
