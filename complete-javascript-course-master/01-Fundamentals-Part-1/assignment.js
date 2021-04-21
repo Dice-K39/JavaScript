@@ -16,3 +16,14 @@ console.log(typeof language);
 
 // let, const. and var
 language = "English";
+
+// Basic Operators
+population /= 2;
+console.log(population++);
+
+let finland = 6;
+console.log(population > finland);
+console.log(33 < population);
+
+let description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
+console.log(description);
