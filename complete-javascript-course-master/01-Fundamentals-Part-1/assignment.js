@@ -18,8 +18,8 @@ console.log(typeof language);
 language = "English";
 
 // Basic Operators
-population /= 2;
-console.log(population++);
+// population /= 2;
+// console.log(population++);
 
 let finland = 6;
 console.log(population > finland);
@@ -32,3 +32,13 @@ console.log(description);
 description = `${country} is in ${continent},
  and its ${population} million people speak ${language}`;
 console.log(description)
+
+// Taking Decisions: if/else Statements
+if (population > 33)
+{
+    console.log(`${country}'s population is above average.`);
+}
+else
+{
+    console.log(`${country}'s population is ${population - 33} million below average.`);
+}
