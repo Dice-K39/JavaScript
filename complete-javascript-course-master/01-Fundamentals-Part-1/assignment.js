@@ -42,3 +42,12 @@ else
 {
     console.log(`${country}'s population is ${population - 33} million below average.`);
 }
+
+// Type Conversion and Coercion
+const ex1 = '9' - '5';
+const ex2 = "19" - "13" + "17";
+const ex3 = "19" - "13" + 17;
+const ex4 = "123" < 57;
+const ex5 = 5 + 6 + '4' + 9 - 4 - 2;
+
+console.log(ex1, ex2, ex3, ex4, ex5);
