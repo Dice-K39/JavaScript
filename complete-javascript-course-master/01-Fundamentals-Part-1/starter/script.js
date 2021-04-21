@@ -22,10 +22,9 @@ let job1 = "programmer";
 let job2 = "teacher";
 
 console.log(myFirstJob);
-*/
+
 
 // Data Types
-/*
 let javaScriptIsFun = true;
 
 console.log(javaScriptIsFun);
@@ -49,3 +48,20 @@ console.log(typeof year);
 
 console.log(typeof null);
 */
+
+
+// let, const, var
+let age = 30;
+age = 31;
+
+const birthYear = 1991;
+// birthYear = 1990;
+
+// const job;
+
+// avoid var
+var job = "programmer";
+job = "teacher";
+
+lastName = "Smith"; // Don't do this
+console.log(lastName);
