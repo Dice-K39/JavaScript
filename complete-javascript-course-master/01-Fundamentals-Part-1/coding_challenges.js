@@ -29,22 +29,28 @@
 // }
 
 // Challenge 3
-const dolphins = (97 + 112 + 101) / 3;
-const koalas = (109 + 95 + 106) / 3;
+// const dolphins = (97 + 112 + 101) / 3;
+// const koalas = (109 + 95 + 106) / 3;
 
-if (dolphins > koalas && dolphins >= 100)
-{
-    console.log("Dolphins wins a trophy!");
-}
-else if (koalas > dolphins && koalas >= 100)
-{
-    console.log("Koalas wins a trophy!");
-}
-else if (dolphins === koalas && dolphins >= 100 && koalas >= 100)
-{
-    console.log("The competition is a draw.");
-}
-else
-{
-    console.log("No team wins the trophy.");
-}
+// if (dolphins > koalas && dolphins >= 100)
+// {
+//     console.log("Dolphins wins a trophy!");
+// }
+// else if (koalas > dolphins && koalas >= 100)
+// {
+//     console.log("Koalas wins a trophy!");
+// }
+// else if (dolphins === koalas && dolphins >= 100 && koalas >= 100)
+// {
+//     console.log("The competition is a draw.");
+// }
+// else
+// {
+//     console.log("No team wins the trophy.");
+// }
+
+// Challenge 4
+const bill = 275;//40 430
+const tip = (bill >= 50 && bill < 300) ? bill * 0.15 : bill * 0.2;
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
