@@ -101,3 +101,7 @@ switch (language.toLowerCase())
         console.log(`Great language too :D`);
         break;
 }
+
+// The Conditional (Ternary) Operator
+const average = population > 33 ? `${country}'s population is above average` : `${country}'s population is below average`;
+console.log(average);
