@@ -9,6 +9,7 @@ console.log(describeCountry("Japan", 200, "Tokyo"));
 console.log(describeCountry("France", 300, "Paris"));
 
 // Function Declarations vs. Expressions
+// Arrow Functions
 const percentageOfWorld1 = (population) =>
 {
     return (population / 7900) * 100;
