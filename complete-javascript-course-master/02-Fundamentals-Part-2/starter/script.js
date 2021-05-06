@@ -5,7 +5,7 @@ const passTest = true;
 
 if (passTest)
 {
-    hasDriverLicense = true;
+    hasDriversLicense = true;
 }
 
 if (hasDriversLicense)
