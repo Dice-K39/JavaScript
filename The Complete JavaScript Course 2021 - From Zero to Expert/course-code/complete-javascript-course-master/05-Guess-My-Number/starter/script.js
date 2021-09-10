@@ -6,9 +6,9 @@ let score = 20;
 
 const messageField = document.querySelector(".message");
 const scoreField = document.querySelector(".score");
-const number = document.querySelector(".number");
+const numberField = document.querySelector(".number");
 const guessField = document.querySelector(".guess");
-const body = document.querySelector("body");
+const bodyField = document.querySelector("body");
 
 const displayMessage = (message) =>
 {
@@ -29,10 +29,10 @@ document.querySelector(".check").addEventListener("click", () =>
     }
     else if (guess === secretNumber)
     {
-        number.textContent = secretNumber;
+        numberField.textContent = secretNumber;
         displayMessage("Correct Number!");
-        body.style.backgroundColor = "#60b347";
-        number.style.width = "30rem";
+        bodyField.style.backgroundColor = "#60b347";
+        numberField.style.width = "30rem";
 
         if (score > highscore)
         {
@@ -66,8 +66,8 @@ document.querySelector(".again").addEventListener("click", () =>
 
     displayScore(score);
     displayMessage("Start guessing...");
-    number.textContent = "?";
+    numberField.textContent = "?";
     guessField.value = "";
-    body.style.backgroundColor = "#222";
-    number.style.width = "15rem";
+    bodyField.style.backgroundColor = "#222";
+    numberField.style.width = "15rem";
 });
