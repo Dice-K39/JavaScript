@@ -96,42 +96,100 @@
 
 
 // this keyword
-console.log(this);
 
-const calcAge = function(birthYear)
-{
-    console.log(2037 - birthYear);
-    console.log(this);
-}
+// console.log(this);
 
-calcAge(1991);
+// const calcAge = function(birthYear)
+// {
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// }
 
-const calcAgeArrow = (birthYear) =>
-{
-    console.log(2037 - birthYear);
-    console.log(this);
-}
+// calcAge(1991);
 
-calcAgeArrow(1991);
+// const calcAgeArrow = (birthYear) =>
+// {
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// }
 
+// calcAgeArrow(1991);
+
+// const dicek =
+// {
+//     year: 1981,
+//     calcAge: function()
+//     {
+//         console.log(this)
+//         console.log(2037 - this.year);
+//     }
+// }
+
+// dicek.calcAge();
+
+// const aruta =
+// {
+//     year: 2017
+// }
+
+// aruta.calcAge = dicek.calcAge;
+// aruta.calcAge();
+
+// const f = dicek.calcAge;
+
+
+// Regular Functions and Arrow Functions
+
+// var firstName = "Aruta";
 const dicek =
 {
+    firstName: "Dice-K",
     year: 1981,
     calcAge: function()
     {
-        console.log(this)
+        console.log(this);
         console.log(2037 - this.year);
+
+        // Solution 1
+        // const self = this;
+        // const isMillenial = function()
+        // {
+        //     console.log(self);
+        //     console.log(self.year >= 1981 && self.year <= 1996);
+        // }
+
+        // Solution 2
+        const isMillenial = () =>
+        {
+            console.log(this);
+            console.log(this.year >= 1981 && this.year <= 1996);
+        }
+
+        isMillenial();
+    },
+    greet: () =>
+    {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`);
     }
 }
 
+dicek.greet();
 dicek.calcAge();
 
-const aruta =
+// arguments keyword
+const addExpr = function (a, b)
 {
-    year: 2017
+    console.log(arguments);
+
+    return a + b;
 }
+addExpr(2, 5);
+addExpr(2, 5, 8, 12);
 
-aruta.calcAge = dicek.calcAge;
-aruta.calcAge();
-
-const f = dicek.calcAge;
+var addArrow = (a, b) => 
+{
+    console.log(arguments);
+    return a + b;
+}
+addArrow(2, 5, 8);
