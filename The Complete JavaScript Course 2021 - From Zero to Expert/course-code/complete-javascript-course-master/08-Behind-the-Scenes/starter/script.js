@@ -1,5 +1,7 @@
 'use strict';
 
+// Scopes
+
 // function calcAge(birthYear)
 // {
 //     const age = 2037 - birthYear;
@@ -45,47 +47,91 @@
 // // printAge();
 
 
+// Hoisting
+
 // variables
-console.log(me);
-// console.log(job);
-// console.log(year);
+// console.log(me);
+// // console.log(job);
+// // console.log(year);
 
-var me = "Dice-K";
-let job = "programmer";
-const year = 1981;
+// var me = "Dice-K";
+// let job = "programmer";
+// const year = 1981;
 
-// functions
-console.log(addDecl(2, 3));
-// console.log(addExpr(2, 3));
-console.log(addArrow);
-// console.log(addArrow(2, 3));
+// // functions
+// console.log(addDecl(2, 3));
+// // console.log(addExpr(2, 3));
+// console.log(addArrow);
+// // console.log(addArrow(2, 3));
 
-function addDecl(a,b)
+// function addDecl(a,b)
+// {
+//     return a + b;
+// }
+
+// const addExpr = function(a, b)
+// {
+//     return a + b;
+// }
+
+// var addArrow = (a, b) => a + b;
+
+// // Example
+// console.log(numProducts);
+// if (!numProducts) deleteShoppingCart();
+// var numProducts = 10;
+
+// function deleteShoppingCart()
+// {
+//     console.log("All products deleted!");
+// }
+
+// var x = 1;
+// let y = 2;
+// const z = 3;
+
+// console.log(x === window.x);
+// console.log(y === window.y);
+// console.log(z === window.z);
+
+
+// this keyword
+console.log(this);
+
+const calcAge = function(birthYear)
 {
-    return a + b;
+    console.log(2037 - birthYear);
+    console.log(this);
 }
 
-const addExpr = function(a, b)
+calcAge(1991);
+
+const calcAgeArrow = (birthYear) =>
 {
-    return a + b;
+    console.log(2037 - birthYear);
+    console.log(this);
 }
 
-var addArrow = (a, b) => a + b;
+calcAgeArrow(1991);
 
-// Example
-console.log(numProducts);
-if (!numProducts) deleteShoppingCart();
-var numProducts = 10;
-
-function deleteShoppingCart()
+const dicek =
 {
-    console.log("All products deleted!");
+    year: 1981,
+    calcAge: function()
+    {
+        console.log(this)
+        console.log(2037 - this.year);
+    }
 }
 
-var x = 1;
-let y = 2;
-const z = 3;
+dicek.calcAge();
 
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(z === window.z);
+const aruta =
+{
+    year: 2017
+}
+
+aruta.calcAge = dicek.calcAge;
+aruta.calcAge();
+
+const f = dicek.calcAge;
