@@ -44,6 +44,38 @@ const restaurant = {
   }
 };
 
+console.log("---- OR ----");
+// Use any data type, return any data type, short-circuiting
+console.log(3 || "Dice-K");
+console.log("" || "Dice-K");
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || "" || "Hello" || 23 || null);
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests: 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log("---- AND ----");
+console.log(0 && "Dice-K");
+console.log(7 && "Dice-K");
+
+console.log("Hello" && 23 && null && "Dice-K");
+
+if(restaurant.orderPizza)
+{
+  restaurant.orderPizza("mushrooms", "spinach");
+}
+
+restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+
+/*
+// Spread and Rest operators
+
 // 1. Destructuring
 
 // SPREAD - used on right side of assignment
@@ -80,6 +112,7 @@ add(...x);
 
 restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
 restaurant.orderPizza("mushrooms");
+*/
 
 /*
 // The Spread Operator
