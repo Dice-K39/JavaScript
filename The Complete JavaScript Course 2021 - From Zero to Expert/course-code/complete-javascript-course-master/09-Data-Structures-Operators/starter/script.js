@@ -48,6 +48,35 @@ const restaurant = {
   }
 };
 
+// Optional Chaning
+if (restaurant.openingHours && restaurant.openingHours.mon)
+{
+  console.log(restaurant.openingHours.mon.open);
+}
+
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+// console.log(restaurant.openingHours.mon.open);
+
+const days = [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+for (const day of days)
+{
+  const open = restaurant.openingHours[day]?.open ?? "Closed";
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+console.log(restaurant.order?.(0,1) ?? "Method does not exist");
+console.log(restaurant.orderRisotto?.(0,1) ?? "Method does not exist");
+
+const users =
+[
+  {
+    name: "Dice-K",
+    email: "dicek@example.com"
+  }
+]
+console.log(users[0]?.name ?? "User array empty");
+
 /*
 // Looping Arrays: The for-of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
