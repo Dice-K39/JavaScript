@@ -47,7 +47,9 @@ const restaurant = {
     console.log(otherIngredients)
   }
 };
-
+/*
+//////////////////////////////////////////////////////////////////////////////
+// Iterating through a Map
 const question = new Map(
   [
     ["question", "What is the best programming language in the world?"],
@@ -85,7 +87,8 @@ console.log([...question]);
 // console.log(question.entries());
 console.log([...question.keys()]);
 console.log([...question.values()]);
-
+//////////////////////////////////////////////////////////////////////////////
+*/
 
 /*
 //////////////////////////////////////////////////////////////////////////////
