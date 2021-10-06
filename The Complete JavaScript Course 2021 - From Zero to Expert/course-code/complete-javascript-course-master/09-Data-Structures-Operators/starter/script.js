@@ -48,6 +48,36 @@ const restaurant = {
   }
 };
 
+const rest = new Map();
+rest.set("name", "Classico Italiano"); // similar to add method to Set
+rest.set(1, "Firenze, Italy");
+console.log(rest.set(2, "Lisbon, Portugal"));
+
+rest.set("categories", ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']).set("open", 11).set("close", 23).set(true, "We are open.").set(false, "We are closed.");
+
+console.log(rest.get("name"));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 8;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+// rest.clear();
+
+const arr = [1, 2];
+rest.set(arr, "Test")
+rest.set(document.querySelector("h1"), "Heading");
+console.log(rest);
+console.log(rest.size);
+
+console.log(rest.get(arr));
+
+
+/*
+//////////////////////////////////////////////////////////////////////////////
+// Sets
 const ordersSet = new Set(["Pasta", "Pizza", "Pizza", "Risotto", "Pasta", "Pizza"]);
 console.log(ordersSet);
 
@@ -74,8 +104,11 @@ console.log(staffUnique);
 console.log(new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size)
 
 console.log(new Set("dice-k").size);
+//////////////////////////////////////////////////////////////////////////////
+*/
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Looping Objects: Keys, Values, and Entries
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -98,9 +131,11 @@ for (const [key, {open, close}] of entries)
 {
   console.log(`On ${key} we pen at ${open} and close at ${close}`);
 }
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Optional Chaning
 if (restaurant.openingHours && restaurant.openingHours.mon)
 {
@@ -129,9 +164,11 @@ const users =
   }
 ]
 console.log(users[0]?.name ?? "User array empty");
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Looping Arrays: The for-of Loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
@@ -146,9 +183,11 @@ for (const [i, el] of menu.entries())
 }
 
 // console.log(...menu.entries());
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Nullish Coalescing Operator (??)
 
 restaurant.numGuests = 0;
@@ -158,9 +197,11 @@ console.log(guests);
 // Nullish: null and undefined (NOT 0 or "")
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Short Circuiting (&& and ||)
 
 console.log("---- OR ----");
@@ -191,9 +232,11 @@ if(restaurant.orderPizza)
 }
 
 restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Spread and Rest operators
 
 // 1. Destructuring
@@ -232,9 +275,11 @@ add(...x);
 
 restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
 restaurant.orderPizza("mushrooms");
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // The Spread Operator
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -283,9 +328,11 @@ const restaurantCopy = {...restaurant};
 restaurantCopy.name = "Ristorante Roma";
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Destructuring Objects
 restaurant.orderDelivery(
   {
@@ -324,9 +371,11 @@ console.log(a, b);
 // Nested objects
 const { fri: { open: o, close: c } } = openingHours;
 console.log(o, c);
+//////////////////////////////////////////////////////////////////////////////
 */
 
 /*
+//////////////////////////////////////////////////////////////////////////////
 // Destructuring Arrays
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -363,4 +412,5 @@ console.log(i, j, k);
 // Default values
 const [p = 1, q = 1, r = 1] = [8];
 console.log(p, q, r);
+//////////////////////////////////////////////////////////////////////////////
 */
