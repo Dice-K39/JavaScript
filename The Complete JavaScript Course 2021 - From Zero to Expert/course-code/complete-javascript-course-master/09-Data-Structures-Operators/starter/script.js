@@ -48,6 +48,35 @@ const restaurant = {
   }
 };
 
+const ordersSet = new Set(["Pasta", "Pizza", "Pizza", "Risotto", "Pasta", "Pizza"]);
+console.log(ordersSet);
+
+console.log(new Set("Dice-K"));
+
+console.log(ordersSet.size); // checks how many unique values are in the set
+console.log(ordersSet.has("Pizza")); // checks if arguemnt is in the set, same as includes in arrays
+console.log(ordersSet.has("Bread"));
+ordersSet.add("Garlic Bread"); // adds to the set
+ordersSet.add("Garlic Bread");
+ordersSet.delete("Risotto"); // deletes selected
+// ordersSet.clear(); // clears the whole set
+console.log(ordersSet);
+
+for (const order of ordersSet)
+{
+  console.log(order);
+}
+
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size)
+
+console.log(new Set("dice-k").size);
+
+/*
+// Looping Objects: Keys, Values, and Entries
 const properties = Object.keys(openingHours);
 console.log(properties);
 
@@ -69,6 +98,7 @@ for (const [key, {open, close}] of entries)
 {
   console.log(`On ${key} we pen at ${open} and close at ${close}`);
 }
+*/
 
 /*
 // Optional Chaning
