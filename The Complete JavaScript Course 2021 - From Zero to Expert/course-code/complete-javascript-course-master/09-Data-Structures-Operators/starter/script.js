@@ -49,6 +49,70 @@ const restaurant = {
 };
 
 const airline = "Delta Airlines";
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = "diCE-k";
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing email
+const email = "dice-k@example.com";
+const loginEmail = "       dice-k@ExamPle.COM \n";
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing
+const priceUS = "$399.99";
+const priceJP = priceUS.replace('$', '￥').replace('.', '');
+console.log(priceJP);
+
+const annoucement = "All passengers come to boarding door 23. Boarding door 23!";
+console.log(annoucement.replace("door", "gate"));
+console.log(annoucement.replaceAll("door", "gate"));
+console.log(annoucement.replaceAll(/door/g, "gate"));
+
+// Booleans
+const plane = "Airbus DC10";
+console.log(plane.includes("DC10"));
+console.log(plane.includes("737"));
+console.log(plane.startsWith("Air"));
+
+if (plane.startsWith("Airbus") && plane.endsWith("10"))
+{
+  console.log("This plane is old.");
+}
+
+const checkBaggage = (items) =>
+{
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes("knife") || baggage.includes("gun"))
+  {
+    console.log("You are NOT allowed on board.");
+  }
+  else
+  {
+    console.log("Welcome aboard!");
+  }
+}
+checkBaggage("I have a laptop, some food and a pocket Knife.");
+checkBaggage("Socks and camera");
+checkBaggage("Got some snacks and a gun for protection.");
+
+
+/*
+//////////////////////////////////////////////////////////////////////////////
+// Working with Strings - Part 1
+const airline = "Delta Airlines";
 const plane = "A320";
 
 console.log(plane[0]); // A
@@ -93,6 +157,8 @@ console.log(new String("Dice-K"));
 console.log(typeof new String("Dice-K"));
 
 console.log(typeof new String("Dice-K").slice(1));
+//////////////////////////////////////////////////////////////////////////////
+*/
 
 /*
 //////////////////////////////////////////////////////////////////////////////
