@@ -47,6 +47,53 @@ const restaurant = {
     console.log(otherIngredients)
   }
 };
+
+const airline = "Delta Airlines";
+const plane = "A320";
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log(plane[2]); // 2
+console.log("B737"[0]); // B
+
+console.log(airline.length); // 14
+console.log("B737".length); // 4
+
+console.log(airline.indexOf('r')); // 8
+console.log(airline.lastIndexOf('a')); // 4
+console.log(airline.indexOf("airlines")); // -1
+
+console.log(airline.slice(4)); // a Airlines
+console.log(airline.slice(4, 5)); // a
+
+console.log(airline.slice(0, airline.indexOf(' '))) // Delta
+console.log(airline.slice(airline.indexOf(' ') + 1)); // Airlines
+
+console.log(airline.slice(-2)); // es
+console.log(airline.slice(1, -1)); // elta Airline
+
+const checkMiddleSeat = (seat) =>
+{
+  const s = seat.slice(-1);
+
+  if (s === 'B' || s === 'E')
+  {
+    console.log("You got the middle seat");
+  }
+  else
+  {
+    console.log("You got lucky");
+  }
+}
+checkMiddleSeat("11B");
+checkMiddleSeat("23C");
+checkMiddleSeat("3E");
+
+console.log(new String("Dice-K"));
+console.log(typeof new String("Dice-K"));
+
+console.log(typeof new String("Dice-K").slice(1));
+
 /*
 //////////////////////////////////////////////////////////////////////////////
 // Iterating through a Map
