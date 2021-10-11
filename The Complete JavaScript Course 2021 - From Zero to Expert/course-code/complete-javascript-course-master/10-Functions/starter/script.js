@@ -3,6 +3,7 @@
 /*
 /////////////////////////////////////////////////////////////
 // Default Parameters
+
 const bookings = [];
 
 const createBooking = function(flightNum, numPassengers = 1, price = 199 * numPassengers)
@@ -32,6 +33,7 @@ createBooking("LH234", undefined, 1000);
 /*
 /////////////////////////////////////////////////////////////
 // How Passing Arguments Works: Value vs Reference
+
 const flight = "LH234";
 const dicek =
 {
@@ -72,8 +74,10 @@ checkIn(flight, dicek);
 /////////////////////////////////////////////////////////////
 */
 
+/*
 /////////////////////////////////////////////////////////////
 // Functions Accepting Callback Functions
+
 const oneWord = function(str)
 {
     return str.replace(/ /g, '').toLowerCase();
@@ -104,4 +108,35 @@ const high5 = function()
 document.body.addEventListener("click", high5);
 
 ["Dice-K", "Martha", "Adam"].forEach(high5);
+/////////////////////////////////////////////////////////////
+*/
+
+/////////////////////////////////////////////////////////////
+// Functions Returning Functions
+
+const greet = function(greeting)
+{
+    return function(name)
+    {
+        console.log(`${greeting} ${name}`);
+    }
+}
+
+const greeterHey = greet("Hey");
+greeterHey("Dice-K");
+greeterHey("Steven");
+
+greet("Hello")("Dice-K");
+
+// Challenge
+const greet2 = (greeting) =>
+{
+    return (name) =>
+    {
+        console.log(`${greeting} ${name}`);
+    };
+}
+
+const greeting = greet2("Hello THE WARUDO!");
+greeting("Dice-K");
 /////////////////////////////////////////////////////////////
