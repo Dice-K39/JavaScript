@@ -111,6 +111,7 @@ document.body.addEventListener("click", high5);
 /////////////////////////////////////////////////////////////
 */
 
+/*
 /////////////////////////////////////////////////////////////
 // Functions Returning Functions
 
@@ -139,4 +140,61 @@ const greet2 = (greeting) =>
 
 const greeting = greet2("Hello THE WARUDO!");
 greeting("Dice-K");
+/////////////////////////////////////////////////////////////
+*/
+
+/////////////////////////////////////////////////////////////
+// The call and apply Methods
+
+const delta =
+{
+    airline: "Delta",
+    iataCode: "DL",
+    bookings: [],
+    book(flightNum, name)
+    {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
+        this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name })
+    }
+}
+
+delta.book(239, "Dice-K Hash");
+delta.book(635, "John Smith");
+console.log(delta);
+
+const echowings =
+{
+    airline: "Echowings",
+    iataCode: "EW",
+    bookings: []
+}
+
+const book = delta.book;
+
+// Does NOT work
+// book(23, "Sarah Williams");
+
+// Call method - takes a list of arguments
+book.call(echowings, 23, "Sarah Williams");
+console.log(echowings);
+
+book.call(delta, 239, "Mary Cooper");
+console.log(delta);
+
+const deltaair =
+{
+    airline: "Delta Air",
+    iataCode: "DA",
+    bookings: []
+}
+
+book.call(deltaair, 583, "Mary Cooper");
+console.log(deltaair);
+
+// Apply method - does not receive a list of arguments, takes an array of the arguments
+const flightData = [583, "George Cooper"];
+book.apply(deltaair, flightData);
+console.log(deltaair);
+
+book.call(swiss, ...flightData);
 /////////////////////////////////////////////////////////////
