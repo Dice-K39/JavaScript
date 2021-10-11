@@ -143,6 +143,7 @@ greeting("Dice-K");
 /////////////////////////////////////////////////////////////
 */
 
+/*
 /////////////////////////////////////////////////////////////
 // The call and apply Methods
 
@@ -199,6 +200,7 @@ console.log(deltaair);
 book.call(deltaair, ...flightData);
 
 // The bind Method
+
 // book.call(echowings, 23, "Sarah Williams");
 
 const bookEW = book.bind(echowings);
@@ -246,3 +248,4 @@ const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
 /////////////////////////////////////////////////////////////
+*/
