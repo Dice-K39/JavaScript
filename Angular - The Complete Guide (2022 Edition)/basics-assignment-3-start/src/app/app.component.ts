@@ -14,7 +14,8 @@ export class AppComponent {
   {
     this.details = !this.details;
     // this.clicks.push(++this.count);
-    this.clicks.push(this.clicks.length + 1);
+    // this.clicks.push(this.clicks.length + 1);
+    this.clicks.push(new Date());
   }
 
   // getBackgroundColor()
