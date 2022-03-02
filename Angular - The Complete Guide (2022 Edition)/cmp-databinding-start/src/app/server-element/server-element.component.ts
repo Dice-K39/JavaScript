@@ -28,40 +28,49 @@ export class ServerElementComponent
     @Input("srvElement") element: { type: string, name: string, content: string };
     @Input() name: string;
     
-    constructor() {
+    constructor()
+    {
         console.log("constructor called");
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    ngOnChanges(changes: SimpleChanges)
+    {
         console.log("ngOnChanges called");
         console.log(changes);
     }
     
-    ngOnInit(): void {
+    ngOnInit(): void
+    {
         console.log("ngOnInit called");
     }
 
-    ngDoCheck() {
+    ngDoCheck()
+    {
         console.log("ngDoCheck called");
     }
 
-    ngAfterContentInit() {
-        console.log("ngAfterContent called");
+    ngAfterContentInit()
+    {
+        console.log("ngAfterContentInit called");
     }
 
-    ngAfterContentChecked() {
+    ngAfterContentChecked()
+    {
         console.log("ngAfterContentChecked called");
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit()
+    {
         console.log("ngAfterViewInit called");
     }
 
-    ngAfterViewChecked() {
+    ngAfterViewChecked()
+    {
         console.log("ngAfterViewChecked called");
     }
     
-    ngOnDestroy() {
+    ngOnDestroy()
+    {
         console.log("ngOnDestroy called");
     }
 }
