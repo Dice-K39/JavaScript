@@ -7,5 +7,12 @@
     <body ng-controller="MainController">
         <p>{{ sayHello("Dice-K") }}</p>
         <p>{{ sayHello("Nier") }}</p>
+        <p>
+            <input type="text" ng-model="itemIndex" />
+            <input type="button" value="Get Item" ng-click="getItem()" />
+        </p>
+        <p>
+            Current Item: {{ currentItem }}
+        </p>
     </body>
 </html>
