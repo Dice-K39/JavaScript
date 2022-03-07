@@ -43,3 +43,19 @@ angular.module("myApp").controller("MainController", ["$scope", "$interval", fun
         $scope.randomValue = Math.round(Math.random() * 1000000);
     }, 2000);
 }]);
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Examining Dot Notation
+angular.module("myApp").controller("ParentController", ["$scope", function($scope)
+{
+    $scope.model =
+    {
+        name: "John Smith"
+    }
+
+    $scope.name = "John Smith";
+}]);
+
+angular.module("myApp").controller("ChildController", ["$scope", function($scope)
+{
+
+}]);

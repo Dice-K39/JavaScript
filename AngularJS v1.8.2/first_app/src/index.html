@@ -35,5 +35,14 @@
         <p style="background:#ff0000; width:{{ pWidth }}px">
             This is a dynamic paragraph
         </p>
+        ---------------------------------------------------------------------------------
+        <div ng-controller="ParentController">
+            <input type="text" ng-model="model.name">
+            <p>This is the parent: {{ model.name }}</p>
+            <div ng-controller="ChildController">
+                <input type="text" ng-model="model.name">
+                <p>This is the child: {{ model.name }}</p>
+            </div>
+        </div>
     </body>
 </html>
