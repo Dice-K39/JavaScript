@@ -25,3 +25,4 @@ const averagePopulation = 33
 console.log(population < averagePopulation);
 const description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
 console.log(description);
+/////////////////////////////////////////////////////////////////
