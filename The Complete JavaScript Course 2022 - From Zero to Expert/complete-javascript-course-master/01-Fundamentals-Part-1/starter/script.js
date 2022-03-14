@@ -24,7 +24,7 @@ let job2 = "programmer";
 
 console.log(myFirstJob);
 
-// Assignment 1: Values and Variables
+// Assignment: Values and Variables
 let country = "USA";
 let continent = "North America";
 let population = 332000000;
