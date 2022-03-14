@@ -28,9 +28,6 @@ let job2 = "programmer";
 
 console.log(myFirstJob);
 /////////////////////////////////////////////////////////////////
-*/
-/*
-/////////////////////////////////////////////////////////////////
 // Data Types
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
@@ -51,5 +48,19 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null);
+/////////////////////////////////////////////////////////////////
+// let, const, and var
+let age = 30;
+age = 31;
+
+const birthYear = 1991; // immutable
+// birthYear = 1990;
+// const job;
+
+var job = "sales rep";
+job = "programmer";
+
+lastName = "Hash";
+console.log(lastName);
 /////////////////////////////////////////////////////////////////
 */
