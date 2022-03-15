@@ -110,7 +110,6 @@ console.log(x, y);
 const averageAge = (ageDice + ageSarah) / 2;
 console.log(ageDice, ageSarah, averageAge);
 /////////////////////////////////////////////////////////////////
-*/
 // Strings and Template Literals
 const firstName = "Dice";
 const job = "programmer";
@@ -132,3 +131,5 @@ lines")
 console.log(`String with
 multiple
 lines`)
+/////////////////////////////////////////////////////////////////
+*/
