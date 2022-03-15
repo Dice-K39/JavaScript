@@ -111,3 +111,24 @@ const averageAge = (ageDice + ageSarah) / 2;
 console.log(ageDice, ageSarah, averageAge);
 /////////////////////////////////////////////////////////////////
 */
+// Strings and Template Literals
+const firstName = "Dice";
+const job = "programmer";
+const birthYear = 1991;
+const year = 2037;
+
+const dice = "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + '!';
+console.log(dice);
+
+const diceNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(diceNew);
+
+console.log(`Just a regular string...`);
+
+console.log("String with \n\
+multiple \n\
+lines")
+
+console.log(`String with
+multiple
+lines`)
