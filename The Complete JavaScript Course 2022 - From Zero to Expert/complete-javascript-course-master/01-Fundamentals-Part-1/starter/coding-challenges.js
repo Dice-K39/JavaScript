@@ -29,3 +29,30 @@ else
     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI}).`)
 
 }
+console.log("---- #3 ----");
+const dolphinsAverageScore = (96 + 108 + 89) / 3;
+const koalasAverageScore = (88 + 91 + 110) / 3;
+// const dolphinsAverageScore = (97 + 112 + 101) / 3;
+// const koalasAverageScore = (109 + 95 + 123) / 3;
+// const dolphinsAverageScore = (97 + 112 + 101) / 3;
+// const koalasAverageScore = (109 + 95 + 106) / 3;
+const minimumScore = 100;
+
+console.log(dolphinsAverageScore, koalasAverageScore)
+
+if ((dolphinsAverageScore > koalasAverageScore) && dolphinsAverageScore >= minimumScore)
+{
+    console.log("Dolphins wins a trophy! 🏆 ");
+}
+else if ((dolphinsAverageScore < koalasAverageScore) && koalasAverageScore >= minimumScore)
+{
+    console.log("Koalas wins a trophy! 🏆 ");
+}
+else if ((dolphinsAverageScore === koalasAverageScore) && dolphinsAverageScore >= minimumScore && koalasAverageScore >= minimumScore)
+{
+    console.log("It is a draw.");
+}
+else
+{
+    console.log("No one wins the trophy.");
+}
