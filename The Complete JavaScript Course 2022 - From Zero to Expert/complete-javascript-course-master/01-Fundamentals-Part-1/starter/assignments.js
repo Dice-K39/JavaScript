@@ -2,7 +2,7 @@ console.log("------------ Assignments ------------")
 // Values and Variables
 const country = "USA";
 const continent = "North America";
-let population = 332;
+let population = 323;
 
 console.log(country, continent, population);
 /////////////////////////////////////////////////////////////////
@@ -45,3 +45,13 @@ console.log(description);
 // {
 //     console.log("No borders.");
 // }
+/////////////////////////////////////////////////////////////////
+// Logical Operators
+if (language === "English" && population < 50 && !isIsland)
+{
+    console.log(`You should live in ${country}.`);
+}
+else
+{
+    console.log(`${country} does not meet your criteria.`);
+}

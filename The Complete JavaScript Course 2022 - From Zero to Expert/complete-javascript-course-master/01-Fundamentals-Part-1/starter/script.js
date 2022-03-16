@@ -246,7 +246,6 @@ if (favorite !== 23)
     console.log("Why not 23?");
 }
 /////////////////////////////////////////////////////////////////
-*/
 // Logical Operators
 const hasDriversLicense = true;
 const hasGoodVision = true;
@@ -275,3 +274,5 @@ else
 {
     console.log("Someone else should drive...");
 }
+/////////////////////////////////////////////////////////////////
+*/
