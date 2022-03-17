@@ -19,6 +19,7 @@ const markHigherBMI = markBMI > johnBMI;
 
 console.log(markBMI, johnBMI, markHigherBMI);
 
+// #2
 console.log("---- #2 ----");
 if (markBMI > johnBMI)
 {
@@ -29,6 +30,8 @@ else
     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI}).`)
 
 }
+
+// #3
 console.log("---- #3 ----");
 const dolphinsAverageScore = (96 + 108 + 89) / 3;
 const koalasAverageScore = (88 + 91 + 110) / 3;
@@ -56,3 +59,10 @@ else
 {
     console.log("No one wins the trophy.");
 }
+
+// #4
+console.log("---- #4 ----");
+const bill = 430;
+const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.20;
+
+console.log(`The bill was \$${bill}, the tip was \$${tip}, and the total value is \$${bill + tip}.`);
