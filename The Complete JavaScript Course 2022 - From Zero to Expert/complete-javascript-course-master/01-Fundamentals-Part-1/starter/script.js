@@ -276,3 +276,55 @@ else
 }
 /////////////////////////////////////////////////////////////////
 */
+// The switch Statement
+const day = "friday";
+
+switch (day)
+{
+    case "monday":
+        console.log("Plan weekly schedule");
+        console.log("Go to coding meetup");
+        break;
+    case "tuesday":
+        console.log("Take a break");
+        break;
+    case "wednesday":
+    case "thursday":
+        console.log("Write code examples");
+        break;
+    case "friday":
+        console.log("End of the work week");
+        break;
+    case "saturday":
+    case "sunday":
+        console.log("Enjoy the weekend");
+        break;
+    default:
+        console.log("Not a valid day");
+}
+
+if (day === "monday")
+{
+    console.log("Plan weekly schedule");
+    console.log("Go to coding meetup");
+}
+else if (day === "tuesday")
+{
+    console.log("Take a break");
+}
+else if (day === "wednesday" || day === "thursday")
+{
+    console.log("Write code examples");
+}
+else if (day === "friday")
+{
+    console.log("End of the work week");
+}
+else if (day === "saturday" || day === "sunday")
+{
+    console.log("Enjoy the weekend");
+}
+else
+{
+    console.log("Not a valid day");
+}
