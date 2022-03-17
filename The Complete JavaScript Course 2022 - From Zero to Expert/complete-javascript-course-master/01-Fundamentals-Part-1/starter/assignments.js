@@ -79,3 +79,6 @@ switch (language)
         console.log("Great language too");
         break;
 }
+/////////////////////////////////////////////////////////////////
+// The Conditional (Ternary) Operator
+population > 33 ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);
