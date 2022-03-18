@@ -16,7 +16,6 @@ console.log(usa);
 console.log(japan);
 console.log(canada);
 /////////////////////////////////////////////////////////////////
-*/
 // Function Declarations vs Expressions
 function percentageOfWorld1(population)
 {
@@ -47,3 +46,5 @@ console.log(usa2);
 console.log(japan2);
 console.log(canada2);
 console.log(china2);
+/////////////////////////////////////////////////////////////////
+*/
