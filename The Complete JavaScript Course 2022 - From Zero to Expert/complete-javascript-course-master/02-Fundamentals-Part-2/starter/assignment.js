@@ -61,3 +61,14 @@ console.log(canada);
 console.log(china);
 /////////////////////////////////////////////////////////////////
 */
+// Functions Calling Other Functions
+function percentageOfWorld(population)
+{
+    return Number(((population / 7900) * 100).toFixed(2));
+}
+
+const describePopulation = (country, population) => `${country} has ${population} million people, which is about ${percentageOfWorld(population)} of the world.`;
+
+console.log(describePopulation("USA", 323));
+console.log(describePopulation("Japan", 125.8));
+console.log(describePopulation("Canada", 38.01));
