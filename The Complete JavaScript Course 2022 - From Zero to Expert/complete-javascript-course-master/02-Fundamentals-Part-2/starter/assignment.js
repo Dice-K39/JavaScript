@@ -23,12 +23,27 @@ function percentageOfWorld1(population)
     return Number(((population / 7900) * 100).toFixed(2));
 }
 
-const usa = percentageOfWorld1(323);
-const japan = percentageOfWorld1(125.8);
-const canada = percentageOfWorld1(38.01);
-const china = percentageOfWorld1(1441);
+const usa1 = percentageOfWorld1(323);
+const japan1 = percentageOfWorld1(125.8);
+const canada1 = percentageOfWorld1(38.01);
+const china1 = percentageOfWorld1(1441);
 
-console.log(usa);
-console.log(japan);
-console.log(canada);
-console.log(china);
+console.log(usa1);
+console.log(japan1);
+console.log(canada1);
+console.log(china1);
+
+const percentageOfWorld2 = function(population)
+{
+    return Number(((population / 7900) * 100).toFixed(2));
+}
+
+const usa2 = percentageOfWorld1(323);
+const japan2 = percentageOfWorld1(125.8);
+const canada2 = percentageOfWorld1(38.01);
+const china2 = percentageOfWorld1(1441);
+
+console.log(usa2);
+console.log(japan2);
+console.log(canada2);
+console.log(china2);
