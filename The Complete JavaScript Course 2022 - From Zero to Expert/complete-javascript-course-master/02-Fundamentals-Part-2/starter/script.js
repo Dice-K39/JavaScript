@@ -22,7 +22,6 @@ if (hasDriversLicense)
 // const private = 534;
 // const if = 21;
 /////////////////////////////////////////////////////////////////
-*/
 // Functions
 function logger()
 {
@@ -49,3 +48,23 @@ const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 
 const num = Number("23");
+/////////////////////////////////////////////////////////////////
+*/
+// Function Declarations vs Expressions
+// Function declaration - can be hoisted
+function calcAge1(birthYear)
+{
+    return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1991);
+
+// Function expression
+const calcAge2 = function (birthYear)
+{
+    return 2037 - birthYear;
+}
+
+const age2 = calcAge2(1991);
+
+console.log(age1, age2)
