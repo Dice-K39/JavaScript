@@ -47,7 +47,6 @@ console.log(japan2);
 console.log(canada2);
 console.log(china2);
 /////////////////////////////////////////////////////////////////
-*/
 // Arrow Functions
 const percentageOfWorld3 = (population) => Number(((population / 7900) * 100).toFixed(2));
 
@@ -60,3 +59,5 @@ console.log(usa);
 console.log(japan);
 console.log(canada);
 console.log(china);
+/////////////////////////////////////////////////////////////////
+*/
