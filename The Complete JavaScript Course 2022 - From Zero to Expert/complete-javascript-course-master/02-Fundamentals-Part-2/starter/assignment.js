@@ -60,7 +60,6 @@ console.log(japan);
 console.log(canada);
 console.log(china);
 /////////////////////////////////////////////////////////////////
-*/
 // Functions Calling Other Functions
 function percentageOfWorld(population)
 {
@@ -72,3 +71,5 @@ const describePopulation = (country, population) => `${country} has ${population
 console.log(describePopulation("USA", 323));
 console.log(describePopulation("Japan", 125.8));
 console.log(describePopulation("Canada", 38.01));
+/////////////////////////////////////////////////////////////////
+*/
