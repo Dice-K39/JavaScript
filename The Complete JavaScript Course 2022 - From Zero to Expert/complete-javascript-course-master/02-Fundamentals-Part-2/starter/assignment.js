@@ -73,3 +73,12 @@ console.log(describePopulation("Japan", 125.8));
 console.log(describePopulation("Canada", 38.01));
 /////////////////////////////////////////////////////////////////
 */
+// Introduction to Arrays
+const populations = [323, 125.8, 38.01, 1441];
+console.log(populations.length === 4);
+function percentageOfWorld1(population)
+{
+    return Number(((population / 7900) * 100).toFixed(2));
+}
+const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[populations.length - 1])];
+console.log(percentages);
