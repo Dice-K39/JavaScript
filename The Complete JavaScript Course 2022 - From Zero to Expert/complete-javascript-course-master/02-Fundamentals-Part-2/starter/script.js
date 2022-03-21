@@ -217,7 +217,6 @@ const dice =
     friends: ["Michael", "Peter", "Steven"]
 };
 /////////////////////////////////////////////////////////////////
-*/
 // Dot vs Bracket Notation
 const dice =
 {
@@ -256,3 +255,43 @@ console.log(dice);
 // Challenge
 // "Dice has 3 friends, and his best friend is called Michael"
 console.log(`${dice.firstName} has ${dice.friends.length} friends, and his best friend is called ${dice.friends[0]}`);
+/////////////////////////////////////////////////////////////////
+*/
+// Object Methods
+const dice =
+{
+    firstName: "Dice",
+    lastName: "Hash",
+    birthYear: 1991,
+    job: "programmer",
+    friends: ["Michael", "Peter", "Steven"],
+    hasDriversLicense: true,
+    // calcAge: function (birthYear)
+    // {
+    //     return 2037 - birthYear;
+    // }
+    // calcAge: function ()
+    // {
+    //     // console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
+    calcAge: function ()
+    {
+        this.age =  2037 - this.birthYear;
+        return this.age;
+    },
+    challenge: function ()
+    {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+    }
+};
+
+console.log(dice.calcAge());
+
+console.log(dice.age);
+console.log(dice.age);
+console.log(dice.age);
+
+// Challenge
+// "Dice is a 46-year old programmer, and he has a driver's license"
+console.log(dice.challenge());
