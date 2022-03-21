@@ -295,7 +295,6 @@ console.log(dice.age);
 // "Dice is a 46-year old programmer, and he has a driver's license"
 console.log(dice.challenge());
 /////////////////////////////////////////////////////////////////
-*/
 // Iteration: The for Loop
 // console.log("Lifting weights repetition 1 🏋");
 // console.log("Lifting weights repetition 2 🏋");
@@ -311,4 +310,59 @@ console.log(dice.challenge());
 for (let rep = 1; rep <= 30; rep++)
 {
     console.log(`Lifting weights repetition ${rep} 🏋`)
+}
+/////////////////////////////////////////////////////////////////
+*/
+// Looping Arrays, Breaking, and Continuing
+const diceArray =
+[
+    "Dice",
+    "Hash",
+    2037 - 1991,
+    "programmer",
+    ["Michael", "Peter", "Steven"],
+    true
+]
+const types = [];
+
+for (let i = 0; i < diceArray.length; i++)
+{
+    // Reading from dice array
+    console.log(diceArray[i], typeof diceArray[i]);
+
+    // Filling types array
+    // types[i] = typeof diceArray[i];
+    types.push(typeof diceArray[i])
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++)
+{
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+console.log("--- Only Strings ---")
+for (let i = 0; i < diceArray.length; i++)
+{
+    if (typeof diceArray[i] !== "string")
+    {
+        continue;
+    }
+    console.log(diceArray[i], typeof diceArray[i]);
+}
+
+console.log("--- Break with Number ---")
+for (let i = 0; i < diceArray.length; i++)
+{
+    if (typeof diceArray[i] === "number")
+    {
+        break;
+    }
+    console.log(diceArray[i], typeof diceArray[i]);
 }
