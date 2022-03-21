@@ -256,7 +256,6 @@ console.log(dice);
 // "Dice has 3 friends, and his best friend is called Michael"
 console.log(`${dice.firstName} has ${dice.friends.length} friends, and his best friend is called ${dice.friends[0]}`);
 /////////////////////////////////////////////////////////////////
-*/
 // Object Methods
 const dice =
 {
@@ -295,3 +294,21 @@ console.log(dice.age);
 // Challenge
 // "Dice is a 46-year old programmer, and he has a driver's license"
 console.log(dice.challenge());
+/////////////////////////////////////////////////////////////////
+*/
+// Iteration: The for Loop
+// console.log("Lifting weights repetition 1 🏋");
+// console.log("Lifting weights repetition 2 🏋");
+// console.log("Lifting weights repetition 3 🏋");
+// console.log("Lifting weights repetition 4 🏋");
+// console.log("Lifting weights repetition 5 🏋");
+// console.log("Lifting weights repetition 6 🏋");
+// console.log("Lifting weights repetition 7 🏋");
+// console.log("Lifting weights repetition 8 🏋");
+// console.log("Lifting weights repetition 9 🏋");
+// console.log("Lifting weights repetition 10 🏋");
+
+for (let rep = 1; rep <= 30; rep++)
+{
+    console.log(`Lifting weights repetition ${rep} 🏋`)
+}

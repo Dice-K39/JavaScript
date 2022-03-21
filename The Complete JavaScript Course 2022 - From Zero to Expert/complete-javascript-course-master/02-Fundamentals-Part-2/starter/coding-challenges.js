@@ -32,7 +32,6 @@ console.log(`Bill 1: Bill \$${bills[0]} \+ Tip \$${tips[0]} \= Total \$${total[0
 console.log(`Bill 2: Bill \$${bills[1]} \+ Tip \$${tips[1]} \= Total \$${total[1]}`);
 console.log(`Bill 3: Bill \$${bills[2]} \+ Tip \$${tips[2]} \= Total \$${total[2]}`);
 /////////////////////////////////////////////////////////////////
-*/
 // #3
 const mark =
 {
@@ -71,3 +70,5 @@ else if (markBMI < johnBMI)
 {
     console.log(`${john.fullName}'s BMI (${johnBMI}) is higher than ${mark["fullName"]}'s (${markBMI})).`)
 }
+/////////////////////////////////////////////////////////////////
+*/

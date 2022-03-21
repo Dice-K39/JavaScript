@@ -118,7 +118,6 @@ const myCountry =
 };
 console.log(`${myCountry.country} has ${myCountry["population"]} million ${myCountry.language}-speaking people, ${myCountry["neighbors"].length} neighboring countries, and a capital called ${myCountry.capital}.`);
 /////////////////////////////////////////////////////////////////
-*/
 // Object Methods
 const myCountry =
 {
@@ -139,3 +138,5 @@ const myCountry =
 };
 myCountry.describe();
 console.log(myCountry.checkIsland());
+/////////////////////////////////////////////////////////////////
+*/
