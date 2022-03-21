@@ -108,3 +108,13 @@ const myCountry =
 };
 /////////////////////////////////////////////////////////////////
 */
+// Dot vs Bracket Notation
+const myCountry =
+{
+    country: "Japan",
+    capital: "Tokyo",
+    language: "Japanese",
+    population: 125.8,
+    neighbors: ["South Korea", "China", "Taiwan"]
+};
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} neighboring countries, and a capital called ${myCountry.capital}.`);
