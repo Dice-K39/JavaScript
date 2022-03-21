@@ -71,7 +71,6 @@ else if (markBMI < johnBMI)
     console.log(`${john.fullName}'s BMI (${johnBMI}) is higher than ${mark["fullName"]}'s (${markBMI})).`)
 }
 /////////////////////////////////////////////////////////////////
-*/
 // #4
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
@@ -100,3 +99,5 @@ const calcAverage = function (arr)
 
 console.log(calcAverage(tips));
 console.log(calcAverage(totals));
+/////////////////////////////////////////////////////////////////
+*/
