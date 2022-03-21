@@ -146,3 +146,18 @@ for (let voter = 1; voter <= 50; voter++)
 }
 /////////////////////////////////////////////////////////////////
 */
+// Looping Arrays, Breaking, and Continuing
+const populations = [323, 125.8, 38.01, 1441];
+const percentages = [];
+
+function percentageOfWorld1(population)
+{
+    return Number(((population / 7900) * 100).toFixed(2));
+}
+
+for (let i = 0; i < populations.length; i++)
+{
+    percentages.push(percentageOfWorld1(populations[i]));
+}
+
+console.log(percentages);
