@@ -145,7 +145,6 @@ for (let voter = 1; voter <= 50; voter++)
     console.log(`Voter number ${voter} is currently voting`);
 }
 /////////////////////////////////////////////////////////////////
-*/
 // Looping Arrays, Breaking, and Continuing
 const populations = [323, 125.8, 38.01, 1441];
 const percentages = [];
@@ -161,3 +160,5 @@ for (let i = 0; i < populations.length; i++)
 }
 
 console.log(percentages);
+/////////////////////////////////////////////////////////////////
+*/
