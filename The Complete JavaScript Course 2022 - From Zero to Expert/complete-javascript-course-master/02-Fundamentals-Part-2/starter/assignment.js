@@ -162,3 +162,18 @@ for (let i = 0; i < populations.length; i++)
 console.log(percentages);
 /////////////////////////////////////////////////////////////////
 */
+// Looping Backwards and Loops in Loops
+const listOfNeighbors = 
+[
+    ["Canada", "Mexico"],
+    ["Spain"],
+    ["Norway", "Sweden", "Russia"]
+]
+
+for (let neighbors = 0; neighbors < listOfNeighbors.length; neighbors++)
+{
+    for (let country = 0; country < listOfNeighbors[neighbors].length; country++)
+    {
+        console.log(`Neighbor: ${listOfNeighbors[neighbors][country]}`)
+    }
+}
