@@ -83,3 +83,17 @@ const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(popu
 console.log(percentages);
 /////////////////////////////////////////////////////////////////
 */
+const neighbors = ["Canada", "Mexico"];
+console.log(neighbors);
+neighbors.push("Utopia");
+console.log(neighbors);
+neighbors.pop();
+console.log(neighbors);
+
+if (!neighbors.includes("Germany"))
+{
+    console.log("Probably not a central European country");
+}
+
+neighbors[neighbors.indexOf("Canada")] = "Adanac";
+console.log(neighbors);
