@@ -119,3 +119,23 @@ const myCountry =
 console.log(`${myCountry.country} has ${myCountry["population"]} million ${myCountry.language}-speaking people, ${myCountry["neighbors"].length} neighboring countries, and a capital called ${myCountry.capital}.`);
 /////////////////////////////////////////////////////////////////
 */
+// Object Methods
+const myCountry =
+{
+    country: "Japan",
+    capital: "Tokyo",
+    language: "Japanese",
+    population: 125.8,
+    neighbors: ["South Korea", "China", "Taiwan"],
+    describe: function()
+    {
+        console.log(`${this.country} has ${this["population"]} million ${this.language}-speaking people, ${this["neighbors"].length} neighboring countries, and a capital called ${this.capital}.`);
+    },
+    checkIsland: function ()
+    {
+        this.isIsland = this.neighbors.length === 0 ? true : false;
+        return this.isIsland;
+    }
+};
+myCountry.describe();
+console.log(myCountry.checkIsland());
