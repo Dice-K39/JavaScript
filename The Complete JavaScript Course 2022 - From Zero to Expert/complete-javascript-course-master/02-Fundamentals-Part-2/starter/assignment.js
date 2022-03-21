@@ -98,3 +98,12 @@ neighbors[neighbors.indexOf("Canada")] = "Adanac";
 console.log(neighbors);
 /////////////////////////////////////////////////////////////////
 */
+// Introduction to Objects
+const myCountry =
+{
+    country: "Japan",
+    capital: "Tokyo",
+    language: "Japanese",
+    population: 125.8,
+    neighbors: ["South Korea", "China", "Taiwan"]
+};
