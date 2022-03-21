@@ -174,7 +174,6 @@ console.log(age1, age2, age3);
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
 /////////////////////////////////////////////////////////////////
-*/
 // Basic Array Operations (Methods)
 const friends = ["Michael", "Steven", "Peter"];
 
@@ -207,3 +206,14 @@ if (friends.includes("Steven"))
 {
     console.log("You have a friend called Steven");
 }
+/////////////////////////////////////////////////////////////////
+*/
+// Introduction to Objects
+const dice =
+{
+    firstName: "Dice",
+    lastName: "Hash",
+    age: 2037 - 1991,
+    job: "programmer",
+    friends: ["Michael", "Peter", "Steven"]
+};

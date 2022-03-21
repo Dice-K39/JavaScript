@@ -23,7 +23,6 @@ const checkWinner = function (avgDolphins, avgKoalas)
 checkWinner(calcAverage(44, 23, 71), calcAverage(66, 54, 49));
 checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
 /////////////////////////////////////////////////////////////////
-*/
 // #2
 const calcTip = (bill) => (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.20;
 const bills = [125, 555, 44];
@@ -32,3 +31,5 @@ const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(`Bill 1: Bill \$${bills[0]} \+ Tip \$${tips[0]} \= Total \$${total[0]}`);
 console.log(`Bill 2: Bill \$${bills[1]} \+ Tip \$${tips[1]} \= Total \$${total[1]}`);
 console.log(`Bill 3: Bill \$${bills[2]} \+ Tip \$${tips[2]} \= Total \$${total[2]}`);
+/////////////////////////////////////////////////////////////////
+*/

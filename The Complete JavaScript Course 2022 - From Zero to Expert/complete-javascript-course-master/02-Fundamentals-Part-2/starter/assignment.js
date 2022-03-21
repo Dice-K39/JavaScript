@@ -82,7 +82,6 @@ function percentageOfWorld1(population)
 const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[populations.length - 1])];
 console.log(percentages);
 /////////////////////////////////////////////////////////////////
-*/
 const neighbors = ["Canada", "Mexico"];
 console.log(neighbors);
 neighbors.push("Utopia");
@@ -97,3 +96,5 @@ if (!neighbors.includes("Germany"))
 
 neighbors[neighbors.indexOf("Canada")] = "Adanac";
 console.log(neighbors);
+/////////////////////////////////////////////////////////////////
+*/
