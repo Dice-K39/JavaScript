@@ -97,7 +97,6 @@ if (!neighbors.includes("Germany"))
 neighbors[neighbors.indexOf("Canada")] = "Adanac";
 console.log(neighbors);
 /////////////////////////////////////////////////////////////////
-*/
 // Introduction to Objects
 const myCountry =
 {
@@ -107,3 +106,5 @@ const myCountry =
     population: 125.8,
     neighbors: ["South Korea", "China", "Taiwan"]
 };
+/////////////////////////////////////////////////////////////////
+*/

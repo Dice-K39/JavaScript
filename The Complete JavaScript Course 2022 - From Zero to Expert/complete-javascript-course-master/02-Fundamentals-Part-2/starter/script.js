@@ -207,7 +207,6 @@ if (friends.includes("Steven"))
     console.log("You have a friend called Steven");
 }
 /////////////////////////////////////////////////////////////////
-*/
 // Introduction to Objects
 const dice =
 {
@@ -217,3 +216,43 @@ const dice =
     job: "programmer",
     friends: ["Michael", "Peter", "Steven"]
 };
+/////////////////////////////////////////////////////////////////
+*/
+// Dot vs Bracket Notation
+const dice =
+{
+    firstName: "Dice",
+    lastName: "Hash",
+    age: 2037 - 1991,
+    job: "programmer",
+    friends: ["Michael", "Peter", "Steven"]
+};
+console.log(dice);
+
+console.log(dice.lastName);
+console.log(dice["lastName"]);
+
+const nameKey = "Name";
+console.log(dice["first" + nameKey]);
+console.log(dice["last" + nameKey]);
+
+// console.log(dice."last" + nameKey);
+
+const interestedIn = prompt("What do you want to know about Dice? Choose between firstName, lastName, age, job, and friends.");
+
+if (dice[interestedIn])
+{
+    console.log(dice[interestedIn]);
+}
+else
+{
+    console.log("Wrong request! Choose between firstName, lastName, age, job, and friends.");
+}
+
+dice.location = "USA";
+dice["twitter"] = "@diceexample";
+console.log(dice);
+
+// Challenge
+// "Dice has 3 friends, and his best friend is called Michael"
+console.log(`${dice.firstName} has ${dice.friends.length} friends, and his best friend is called ${dice.friends[0]}`);
