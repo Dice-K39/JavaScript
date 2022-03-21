@@ -177,7 +177,6 @@ for (let neighbors = 0; neighbors < listOfNeighbors.length; neighbors++)
     }
 }
 /////////////////////////////////////////////////////////////////
-*/
 // The while Loop
 const populations = [323, 125.8, 38.01, 1441];
 const percentages3 = [];
@@ -197,3 +196,5 @@ while (counter < populations.length)
 }
 
 console.log(percentages3);
+/////////////////////////////////////////////////////////////////
+*/
