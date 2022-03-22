@@ -1,7 +1,7 @@
 "use strict";
 
-console.log("------------ Assignment ------------");
 /*
+console.log("------------ Assignment ------------");
 // Functions
 function describeCountry(country, population, capitalCity)
 {

@@ -1,7 +1,7 @@
 "use strict";
 
-console.log("------------ Coding Challenge ------------");
 /*
+console.log("------------ Coding Challenge ------------");
 // #1
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 const checkWinner = function (avgDolphins, avgKoalas)

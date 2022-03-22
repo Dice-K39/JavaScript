@@ -1,7 +1,7 @@
 "use strict";
 
-console.log("------------ Lecture ------------");
 /*
+console.log("------------ Lecture ------------");
 // Activating Strict Mode
 // Always first line - helps in debugging
 let hasDriversLicense = false;

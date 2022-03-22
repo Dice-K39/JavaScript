@@ -1,5 +1,5 @@
-console.log("------------ Lecture ------------");
 /*
+console.log("------------ Lecture ------------");
 /////////////////////////////////////////////////////////////////
 // Values and Variables
 let js = "amazing";

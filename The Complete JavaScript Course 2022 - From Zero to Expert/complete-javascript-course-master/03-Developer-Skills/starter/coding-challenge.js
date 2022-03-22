@@ -1,3 +1,4 @@
+/*
 console.log("------------ Coding Challenge ------------");
 const printForecast = function (arr) {
     let str = "... ";
@@ -10,3 +11,4 @@ const printForecast = function (arr) {
 
 printForecast([17, 21, 23]);
 printForecast([12, 5, -5, 0, 4]);
+*/
