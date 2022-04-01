@@ -40,7 +40,6 @@ calcAge(1991);
 // console.log(age);
 // printAge();
 /////////////////////////////////////////////////////////////////
-*/
 // Hoisting and TDZ in Practice
 
 // Variables
@@ -88,3 +87,38 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+/////////////////////////////////////////////////////////////////
+*/
+// The this Keyword in Practice
+// console.log(this);
+
+const calcAge = function (birthYear) {
+    console.log(2037 - birthYear);
+    // console.log(this);
+};
+calcAge(1991);
+
+const calcAgeArrow = (birthYear) => {
+    console.log(2037 - birthYear);
+    // console.log(this);
+};
+calcAgeArrow(1980);
+
+const dice = {
+    year: 1991,
+    calcAge: function () {
+        console.log(this);
+        console.log(2037 - this.year);
+    },
+};
+dice.calcAge();
+
+const paul = {
+    year: 2017,
+};
+
+paul.calcAge = dice.calcAge;
+paul.calcAge();
+
+const f = dice.calcAge;
+f();
