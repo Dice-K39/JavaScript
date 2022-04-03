@@ -185,7 +185,6 @@ friend.age = 27;
 console.log("Friend:", friend);
 console.log("Me:", me);
 /////////////////////////////////////////////////////////////////
-*/
 // Primitives vs. Objects in Practice
 // Primitive types
 let lastName = "Williams";
@@ -223,3 +222,5 @@ jessicaCopy.family.push("Mary");
 jessicaCopy.family.push("John");
 console.log("Before marriage:", jessica2);
 console.log("After marriage:", jessicaCopy);
+/////////////////////////////////////////////////////////////////
+*/
