@@ -88,7 +88,6 @@ console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
 /////////////////////////////////////////////////////////////////
-*/
 // The this Keyword in Practice
 // console.log(this);
 
@@ -122,3 +121,51 @@ paul.calcAge();
 
 const f = dice.calcAge;
 f();
+/////////////////////////////////////////////////////////////////
+*/
+// Regular Functions vs. Arrow Functions
+// var firstName = "Matt";
+
+const dice = {
+    firstName: "Dice",
+    year: 1991,
+    calcAge: function () {
+        // console.log(this);
+        console.log(2037 - this.year);
+
+        // Solution 1
+        // const self = this; // self or that
+        // const isMillenial = function () {
+        //     console.log(self);
+        //     console.log(self.year >= 1981 && self.year <= 1996);
+        // };
+
+        // Solution 2
+        const isMillenial = () => {
+            console.log(self);
+            console.log(this.year >= 1981 && this.year <= 1996);
+        };
+
+        isMillenial();
+    },
+    greet: () => {
+        console.log(this);
+        console.log(`Hey ${this.firstName}`);
+    },
+};
+dice.greet();
+dice.calcAge();
+
+// Arguments keyword
+const addExpression = function (a, b) {
+    console.log(arguments);
+    return a + b;
+};
+addExpression(2, 5);
+addExpression(2, 5, 8, 12);
+
+var addArrow = (a, b) => {
+    console.log(arguments);
+    return a + b;
+};
+addArrow(2, 5, 8);
