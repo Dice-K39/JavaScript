@@ -41,6 +41,8 @@ const game = {
         team2: 6.5,
     },
 };
+/*
+/////////////////////////////////////////////////////////////////
 // Coding Challenge 2
 // 1
 for (const [i, scorer] of game.scored.entries()) {
@@ -68,7 +70,6 @@ for (const scorer of game.scored) {
     scorers[scorer] ? (scorers[scorer] += 1) : (scorers[scorer] = 1);
 }
 console.log(scorers);
-/*
 /////////////////////////////////////////////////////////////////
 // Coding Challenge 1
 // 1
