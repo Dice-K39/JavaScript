@@ -55,7 +55,8 @@ const gameEvents = new Map([
     [80, "⚽ GOAL"],
     [92, "🔶 Yellow card"],
 ]);
-
+/*
+/////////////////////////////////////////////////////////////////
 // Coding Challenge 3
 // 1
 const events = [...new Set(gameEvents.values())];
@@ -83,7 +84,6 @@ for (const [time, event] of gameEvents) {
     const str = time <= 45 ? "[FIRST HALF] " : "[SECOND HALF]";
     console.log(`${str} ${time}: ${event}`);
 }
-/*
 /////////////////////////////////////////////////////////////////
 // Coding Challenge 2
 // 1
