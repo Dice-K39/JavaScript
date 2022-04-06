@@ -56,6 +56,67 @@ const restaurant = {
         console.log(mainIngredient, otherIngredients);
     },
 };
+// Working with Strings - Part 2
+const airline = "Delta Airline Company";
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = "dICe";
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+    passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing email
+const email = "dice@example.com";
+const loginEmail = "   diCE@examPLE.COM \n";
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing
+const priceUS = "$299.99";
+const priceJP = priceUS.replace("$", "￥").replace(".", "");
+console.log(priceJP);
+
+const announcement =
+    "All passengers come to boarding door 23. Boarding door 23.";
+
+console.log(announcement.replace("door", "gate"));
+console.log(announcement.replaceAll("door", "gate"));
+console.log(announcement.replace(/door/g, "gate"));
+
+// Booleans
+const plane = "Boeing 737-600";
+console.log(plane.includes("737"));
+console.log(plane.includes("Boeing"));
+console.log(plane.startsWith("Boing"));
+
+if (plane.startsWith("Boe") && plane.endsWith("600")) {
+    console.log("Part of the new Boeing models");
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+    const baggage = items.toLowerCase();
+    if (baggage.includes("knife") || baggage.includes("gun")) {
+        console.log("You are NOT allowed to board");
+    } else {
+        console.log("Welcome aboard");
+    }
+};
+checkBaggage("I have a laptop, some Food, and a pocket Knife");
+checkBaggage("Socks and camera");
+checkBaggage("Got some snacks and a gun for protection");
+/*
+/////////////////////////////////////////////////////////////////
 // Working with Strings - Part 1
 const airline = "Delta Airline Company";
 const plane = "737-400";
@@ -99,7 +160,6 @@ console.log(new String("dice"));
 console.log(typeof new String("dice"));
 
 console.log(typeof new String("dice").slice(1));
-/*
 /////////////////////////////////////////////////////////////////
 // Maps: Iteration
 const question = new Map([
