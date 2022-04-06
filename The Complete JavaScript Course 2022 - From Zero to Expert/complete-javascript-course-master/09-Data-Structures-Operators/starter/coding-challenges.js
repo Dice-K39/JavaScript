@@ -55,6 +55,35 @@ const gameEvents = new Map([
     [80, "⚽ GOAL"],
     [92, "🔶 Yellow card"],
 ]);
+// Coding Challenge 4
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+const textArea = document.querySelector("textarea");
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", function () {
+    const input = textArea.value.split("\n");
+    // let counter = 1;
+
+    for (const [num, i] of input.entries()) {
+        // const lowerCaseTrimmedSplit = i.toLowerCase().trim().split("_");
+        // const camelCase =
+        //     lowerCaseTrimmedSplit[0] +
+        //     lowerCaseTrimmedSplit[1][0].toUpperCase() +
+        //     lowerCaseTrimmedSplit[1].slice(1);
+        // console.log(camelCase.padEnd(20, " ") + "✅".repeat(counter));
+        // counter++;
+
+        const [first, second] = i.toLowerCase().trim().split("_");
+        const output = `${first}${second.replace(
+            second[0],
+            second[0].toUpperCase()
+        )}`;
+
+        console.log(`${output.padEnd(20, " ")}${"✅".repeat(num + 1)}`);
+    }
+});
 /*
 /////////////////////////////////////////////////////////////////
 // Coding Challenge 3

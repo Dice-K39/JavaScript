@@ -56,6 +56,8 @@ const restaurant = {
         console.log(mainIngredient, otherIngredients);
     },
 };
+/*
+/////////////////////////////////////////////////////////////////
 // Working with Strings - Part 3
 // Split and join
 console.log("a+very+nice+string".split("+"));
@@ -103,7 +105,6 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
-/*
 /////////////////////////////////////////////////////////////////
 // Working with Strings - Part 2
 const airline = "Delta Airline Company";
