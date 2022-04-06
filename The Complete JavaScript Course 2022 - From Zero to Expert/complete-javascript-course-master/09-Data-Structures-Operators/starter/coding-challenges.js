@@ -55,6 +55,8 @@ const gameEvents = new Map([
     [80, "⚽ GOAL"],
     [92, "🔶 Yellow card"],
 ]);
+/*
+/////////////////////////////////////////////////////////////////
 // Coding Challenge 4
 document.body.append(document.createElement("textarea"));
 document.body.append(document.createElement("button"));
@@ -84,7 +86,6 @@ btn.addEventListener("click", function () {
         console.log(`${output.padEnd(20, " ")}${"✅".repeat(num + 1)}`);
     }
 });
-/*
 /////////////////////////////////////////////////////////////////
 // Coding Challenge 3
 // 1
