@@ -31,7 +31,6 @@ createBooking("ABC123", 2);
 createBooking("ABC123", 5);
 createBooking("ABC123", undefined, 1000);
 /////////////////////////////////////////////////////////////////
-*/
 // How Passing Arguments Works: Value vs Reference
 const flight = "ABC123";
 const dice = {
@@ -64,3 +63,32 @@ const newPassport = function (person) {
 
 newPassport(dice);
 checkIn(flight, dice);
+/////////////////////////////////////////////////////////////////
+*/
+// Functions Accepting Callback Functions
+const oneWord = function (str) {
+    return str.replace(/ /g, "").toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+    const [first, ...others] = str.split(" ");
+    return [first.toUpperCase(), ...others].join(" ");
+};
+
+// Higher-order function
+const transformer = function (str, fn) {
+    console.log(`Original string: ${str}`);
+    console.log(`Transformed string: ${fn(str)}`);
+
+    console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer("JavaScript is the best!", upperFirstWord);
+transformer("JavaScript is the best!", oneWord);
+
+// JS uses callbacks all the time
+const high5 = function () {
+    console.log("👋");
+};
+document.addEventListener("click", high5);
+["Dice", "Martha", "Adam"].forEach(high5);
