@@ -109,7 +109,6 @@ const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
 
 greetArr("Hi")("Dice");
 /////////////////////////////////////////////////////////////////
-*/
 // The call and apply Methods
 const lufthansa = {
     airline: "Lufthansa",
@@ -201,3 +200,5 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
+/////////////////////////////////////////////////////////////////
+*/
