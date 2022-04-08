@@ -202,3 +202,24 @@ console.log(addVAT2(100));
 console.log(addVAT2(23));
 /////////////////////////////////////////////////////////////////
 */
+// Immediately Invoked Function Expression (IIFE)
+const runOnce = function () {
+    console.log("This will never run again");
+};
+runOnce();
+
+(function () {
+    console.log("This will never run again");
+    const isPrivate = 23;
+})();
+
+// console.log(isPrivate);
+
+(() => console.log("This will ALSO never run again"))();
+
+{
+    const isPrivate = 23;
+    var notPrivate = 23;
+}
+// console.log(isPrivate);
+console.log(notPrivate);
