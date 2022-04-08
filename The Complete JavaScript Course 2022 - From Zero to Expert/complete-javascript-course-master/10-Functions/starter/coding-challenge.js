@@ -84,7 +84,6 @@ poll.displayResults.call({ answers: [5, 2, 3] }, "string");
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, "string");
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 /////////////////////////////////////////////////////////////////
-*/
 // Coding Challenge 2
 (function () {
     const header = document.querySelector("h1");
@@ -98,6 +97,6 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 })();
 
 // Explanation:
-/*
-    The header color is able to be changed because the closure "remembers" all the variables in the immediately invoked function expression.
+// The header color is able to be changed because the closure "remembers" all the variables in the immediately invoked function expression.
+/////////////////////////////////////////////////////////////////
 */
