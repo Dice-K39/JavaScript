@@ -144,7 +144,6 @@ movements.forEach(function (element, index, array) {
     }
 });
 /////////////////////////////////////////////////////////////////
-*/
 // forEach with Maps and Sets
 
 // Map
@@ -164,3 +163,5 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
     console.log(`${value}: ${value}`);
 });
+/////////////////////////////////////////////////////////////////
+*/
