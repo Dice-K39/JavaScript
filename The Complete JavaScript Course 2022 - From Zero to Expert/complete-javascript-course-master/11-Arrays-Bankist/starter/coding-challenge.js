@@ -1,7 +1,7 @@
 "use strict";
 
 console.log("--------------- Coding Challenge ---------------");
-
+/*
 // Coding Challenge 1
 const checkDogs = function(dogsJulia, dogsKate) 
 {
@@ -24,3 +24,5 @@ const kateData2 = [10, 5, 6, 1, 4];
 
 checkDogs(juliaData1, kateData1);
 checkDogs(juliaData2, kateData2);
+/////////////////////////////////////////////////////////////////
+*/
