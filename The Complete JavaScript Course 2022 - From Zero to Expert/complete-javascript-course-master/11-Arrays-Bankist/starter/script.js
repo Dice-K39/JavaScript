@@ -240,7 +240,6 @@ console.log(depositsFor);
 const withdrawals = movements.filter((movement) => movement < 0);
 console.log(withdrawals);
 /////////////////////////////////////////////////////////////////
-*/
 // The reduce Method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -268,3 +267,5 @@ const max = movements.reduce((acc, movement) => {
     }
 }, movements[0]);
 console.log(max);
+/////////////////////////////////////////////////////////////////
+*/

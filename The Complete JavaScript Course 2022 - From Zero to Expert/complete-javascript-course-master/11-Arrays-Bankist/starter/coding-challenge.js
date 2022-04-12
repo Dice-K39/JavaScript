@@ -26,3 +26,16 @@ checkDogs(juliaData1, kateData1);
 checkDogs(juliaData2, kateData2);
 /////////////////////////////////////////////////////////////////
 */
+// Coding Challenge 2
+const data1 = [5, 2, 4, 1, 15, 8, 3];
+const data2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcAverageHumanAge = function(ages) {
+    const dogAgesInHumanYears = ages.map((age) => age <= 2 ? 2 * age : 16 + age * 4);
+    const excludeYoungDogs = dogAgesInHumanYears.filter((humanAge) => humanAge >= 18);
+    const averageHumanAge = excludeYoungDogs.reduce((acc, dogAge) => acc + dogAge, 0) / excludeYoungDogs.length;
+
+    return averageHumanAge;
+};
+console.log(calcAverageHumanAge(data1));
+console.log(calcAverageHumanAge(data2));
