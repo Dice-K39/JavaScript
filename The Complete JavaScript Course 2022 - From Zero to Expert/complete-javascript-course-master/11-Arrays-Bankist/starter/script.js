@@ -183,3 +183,23 @@ currenciesUnique.forEach(function (value, _, map) {
 });
 /////////////////////////////////////////////////////////////////
 */
+// The map Method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function(movement) {
+//     return movement * eurToUsd;
+// });
+const movementsUSD = movements.map((movement) => movement * eurToUsd);
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for(const movement of movements) {
+    movementsUSDfor.push(movement * eurToUsd);
+}
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map((movement, i) => 
+    `Movement ${ i + 1 }: You ${ movement > 0 ? "deposited" : "withdrew" } ${ Math.abs(movement) }`);
+console.log(movementsDescriptions);
