@@ -79,6 +79,13 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function(movements) {
+    const balance = movements.reduce((acc, mov) => acc + mov, 0);
+
+    labelBalance.textContent = `${ balance } EUR`;
+};
+calcDisplayBalance(account1.movements);
+
 const createUsernames = function(accs) {
     accs.forEach(function(acc) {
         acc.username = acc.owner
@@ -88,7 +95,7 @@ const createUsernames = function(accs) {
             .join("");
     });
 }
-createUsernames(accounts); // stw
+createUsernames(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -214,7 +221,6 @@ const movementsDescriptions = movements.map((movement, i) =>
     `Movement ${ i + 1 }: You ${ movement > 0 ? "deposited" : "withdrew" } ${ Math.abs(movement) }`);
 console.log(movementsDescriptions);
 /////////////////////////////////////////////////////////////////
-*/
 // The filter Method
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -233,3 +239,32 @@ console.log(depositsFor);
 
 const withdrawals = movements.filter((movement) => movement < 0);
 console.log(withdrawals);
+/////////////////////////////////////////////////////////////////
+*/
+// The reduce Method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const balance = movements.reduce(function(accumulator, current, index, array) {
+//     console.log(`Iteration ${ index }: ${ accumulator }`);
+//     return accumulator + current;
+// }, 0);
+// console.log(balance);
+const balance = movements.reduce((accumulator, current, index, array) => accumulator + current, 0);
+console.log(balance);
+
+let balance2 = 0;
+for (const movement of movements) {
+    balance2 += movement;
+}
+console.log(balance2);
+
+// Maximum value
+const max = movements.reduce((acc, movement) => {
+    if (acc > movement) {
+        return acc;
+    }
+    else {
+        return movement;
+    }
+}, movements[0]);
+console.log(max);
