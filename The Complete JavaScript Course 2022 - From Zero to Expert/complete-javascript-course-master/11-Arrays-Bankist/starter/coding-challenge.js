@@ -25,7 +25,6 @@ const kateData2 = [10, 5, 6, 1, 4];
 checkDogs(juliaData1, kateData1);
 checkDogs(juliaData2, kateData2);
 /////////////////////////////////////////////////////////////////
-*/
 // Coding Challenge 2
 const data1 = [5, 2, 4, 1, 15, 8, 3];
 const data2 = [16, 6, 10, 5, 6, 1, 4];
@@ -39,3 +38,5 @@ const calcAverageHumanAge = function(ages) {
 };
 console.log(calcAverageHumanAge(data1));
 console.log(calcAverageHumanAge(data2));
+/////////////////////////////////////////////////////////////////
+*/
