@@ -215,3 +215,21 @@ const movementsDescriptions = movements.map((movement, i) =>
 console.log(movementsDescriptions);
 /////////////////////////////////////////////////////////////////
 */
+// The filter Method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const deposits = movements.filter(function(movement) {
+    return movement > 0;
+});
+console.log(deposits);
+
+const depositsFor = [];
+for (const movement of movements) {
+    if (movement > 0) {
+        depositsFor.push(movement);
+    }
+}
+console.log(depositsFor);
+
+const withdrawals = movements.filter((movement) => movement < 0);
+console.log(withdrawals);
