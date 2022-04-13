@@ -70,7 +70,7 @@ const displayMovements = function (movements) {
         const html = `
         <div class="movements__row">
             <div class="movements__type movements__type--${ type }">${ i + 1 } ${ type }</div>
-            <div class="movements__value">${ movement }</div>
+            <div class="movements__value">${ movement }€</div>
         </div>
         `;
 
@@ -82,9 +82,27 @@ displayMovements(account1.movements);
 const calcDisplayBalance = function(movements) {
     const balance = movements.reduce((acc, mov) => acc + mov, 0);
 
-    labelBalance.textContent = `${ balance } EUR`;
+    labelBalance.textContent = `${ balance }€`;
 };
 calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = function(movements) {
+    const incomes = movements.filter((mov) => mov > 0). reduce((acc, mov) => acc + mov, 0);
+    const out = movements.filter((mov) => mov < 0).reduce((acc, mov) => acc + mov, 0);
+    const interest = movements
+        .filter((mov) => mov > 0)
+        .map((deposit) => deposit * 1.2 / 100)
+        .filter((int, i, arr) => {
+            console.log(arr);
+            return int >= 1;
+        })
+        .reduce((acc, int) => acc + int, 0);
+
+    labelSumIn.textContent = `${ incomes }€`;
+    labelSumOut.textContent = `${ Math.abs(out) }€`;
+    labelSumInterest.textContent = `${ interest }€`;
+}
+calcDisplaySummary(account1.movements);
 
 const createUsernames = function(accs) {
     accs.forEach(function(acc) {
@@ -269,3 +287,16 @@ const max = movements.reduce((acc, movement) => {
 console.log(max);
 /////////////////////////////////////////////////////////////////
 */
+// The Magic of Chaining Methods
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+
+const totalDepositsUSD = movements
+    .filter((mov => mov > 0))
+    .map((mov, i, arr) => {
+        // console.log(arr);
+        return mov * eurToUsd;
+    })
+    // .map((mov) => mov * eurToUsd)
+    .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositsUSD);
