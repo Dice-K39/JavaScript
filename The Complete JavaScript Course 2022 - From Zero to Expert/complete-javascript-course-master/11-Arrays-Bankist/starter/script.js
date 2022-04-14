@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -6,28 +6,28 @@
 
 // Data
 const account1 = {
-	owner: "Jonas Schmedtmann",
+	owner: 'Jonas Schmedtmann',
 	movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
 	interestRate: 1.2, // %
 	pin: 1111
 };
 
 const account2 = {
-	owner: "Jessica Davis",
+	owner: 'Jessica Davis',
 	movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
 	interestRate: 1.5,
 	pin: 2222
 };
 
 const account3 = {
-	owner: "Steven Thomas Williams",
+	owner: 'Steven Thomas Williams',
 	movements: [200, -200, 340, -300, -20, 50, 400, -460],
 	interestRate: 0.7,
 	pin: 3333
 };
 
 const account4 = {
-	owner: "Sarah Smith",
+	owner: 'Sarah Smith',
 	movements: [430, 1000, 700, 50, 90],
 	interestRate: 1,
 	pin: 4444
@@ -36,38 +36,38 @@ const account4 = {
 const accounts = [account1, account2, account3, account4];
 
 // Elements
-const labelWelcome = document.querySelector(".welcome");
-const labelDate = document.querySelector(".date");
-const labelBalance = document.querySelector(".balance__value");
-const labelSumIn = document.querySelector(".summary__value--in");
-const labelSumOut = document.querySelector(".summary__value--out");
-const labelSumInterest = document.querySelector(".summary__value--interest");
-const labelTimer = document.querySelector(".timer");
+const labelWelcome = document.querySelector('.welcome');
+const labelDate = document.querySelector('.date');
+const labelBalance = document.querySelector('.balance__value');
+const labelSumIn = document.querySelector('.summary__value--in');
+const labelSumOut = document.querySelector('.summary__value--out');
+const labelSumInterest = document.querySelector('.summary__value--interest');
+const labelTimer = document.querySelector('.timer');
 
-const containerApp = document.querySelector(".app");
-const containerMovements = document.querySelector(".movements");
+const containerApp = document.querySelector('.app');
+const containerMovements = document.querySelector('.movements');
 
-const btnLogin = document.querySelector(".login__btn");
-const btnTransfer = document.querySelector(".form__btn--transfer");
-const btnLoan = document.querySelector(".form__btn--loan");
-const btnClose = document.querySelector(".form__btn--close");
-const btnSort = document.querySelector(".btn--sort");
+const btnLogin = document.querySelector('.login__btn');
+const btnTransfer = document.querySelector('.form__btn--transfer');
+const btnLoan = document.querySelector('.form__btn--loan');
+const btnClose = document.querySelector('.form__btn--close');
+const btnSort = document.querySelector('.btn--sort');
 
-const inputLoginUsername = document.querySelector(".login__input--user");
-const inputLoginPin = document.querySelector(".login__input--pin");
-const inputTransferTo = document.querySelector(".form__input--to");
-const inputTransferAmount = document.querySelector(".form__input--amount");
-const inputLoanAmount = document.querySelector(".form__input--loan-amount");
-const inputCloseUsername = document.querySelector(".form__input--user");
-const inputClosePin = document.querySelector(".form__input--pin");
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
+const inputTransferTo = document.querySelector('.form__input--to');
+const inputTransferAmount = document.querySelector('.form__input--amount');
+const inputLoanAmount = document.querySelector('.form__input--loan-amount');
+const inputCloseUsername = document.querySelector('.form__input--user');
+const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovements = function (movements, sort = false) {
-	containerMovements.innerHTML = "";
+	containerMovements.innerHTML = '';
 
 	const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
 	movs.forEach(function (movement, i) {
-		const type = movement > 0 ? "deposit" : "withdrawal";
+		const type = movement > 0 ? 'deposit' : 'withdrawal';
 		const html = `
         <div class="movements__row">
             <div class="movements__type movements__type--${type}">${
@@ -77,7 +77,7 @@ const displayMovements = function (movements, sort = false) {
         </div>
         `;
 
-		containerMovements.insertAdjacentHTML("afterbegin", html);
+		containerMovements.insertAdjacentHTML('afterbegin', html);
 	});
 };
 
@@ -112,9 +112,9 @@ const createUsernames = function (accs) {
 	accs.forEach(function (acc) {
 		acc.username = acc.owner
 			.toLowerCase()
-			.split(" ")
+			.split(' ')
 			.map((name) => name[0])
-			.join("");
+			.join('');
 	});
 };
 createUsernames(accounts);
@@ -133,7 +133,7 @@ const updateUI = function (acc) {
 // Event handler
 let currentAccount;
 
-btnLogin.addEventListener("click", function (e) {
+btnLogin.addEventListener('click', function (e) {
 	e.preventDefault();
 
 	currentAccount = accounts.find(
@@ -144,13 +144,13 @@ btnLogin.addEventListener("click", function (e) {
 	// Display UI and message
 	if (currentAccount?.pin === Number(inputLoginPin.value)) {
 		labelWelcome.textContent = `Welcome back, ${
-			currentAccount.owner.split(" ")[0]
+			currentAccount.owner.split(' ')[0]
 		}`;
 
 		containerApp.style.opacity = 100;
 
 		// Clear input fields
-		inputLoginUsername.value = inputLoginPin.value = "";
+		inputLoginUsername.value = inputLoginPin.value = '';
 		inputLoginPin.blur();
 
 		// Update UI
@@ -158,7 +158,7 @@ btnLogin.addEventListener("click", function (e) {
 	}
 });
 
-btnTransfer.addEventListener("click", function (e) {
+btnTransfer.addEventListener('click', function (e) {
 	e.preventDefault();
 
 	const amount = Number(inputTransferAmount.value);
@@ -166,7 +166,7 @@ btnTransfer.addEventListener("click", function (e) {
 		(acc) => acc.username === inputTransferTo.value
 	);
 
-	inputTransferAmount.value = inputTransferTo.value = "";
+	inputTransferAmount.value = inputTransferTo.value = '';
 
 	if (
 		amount > 0 &&
@@ -182,7 +182,7 @@ btnTransfer.addEventListener("click", function (e) {
 	}
 });
 
-btnLoan.addEventListener("click", function (e) {
+btnLoan.addEventListener('click', function (e) {
 	e.preventDefault();
 
 	const amount = Number(inputLoanAmount.value);
@@ -196,10 +196,10 @@ btnLoan.addEventListener("click", function (e) {
 		updateUI(currentAccount);
 	}
 
-	inputLoanAmount.value = "";
+	inputLoanAmount.value = '';
 });
 
-btnClose.addEventListener("click", function (e) {
+btnClose.addEventListener('click', function (e) {
 	e.preventDefault();
 
 	if (
@@ -215,11 +215,11 @@ btnClose.addEventListener("click", function (e) {
 		containerApp.style.opacity = 0;
 	}
 
-	inputCloseUsername.value = inputClosePin.value = "";
+	inputCloseUsername.value = inputClosePin.value = '';
 });
 
 let sorted = false;
-btnSort.addEventListener("click", function (e) {
+btnSort.addEventListener('click', function (e) {
 	e.preventDefault();
 
 	displayMovements(currentAccount.movements, !sorted);
@@ -233,7 +233,7 @@ btnSort.addEventListener("click", function (e) {
 
 /////////////////////////////////////////////////
 
-console.log("--------------- Lecture ---------------");
+console.log('--------------- Lecture ---------------');
 /*
 /////////////////////////////////////////////////////////////////
 // Simple Array Methods
@@ -471,10 +471,9 @@ const overallBalance2 = accounts
 	.reduce((acc, mov) => acc + mov, 0);
 console.log(overallBalance);
 /////////////////////////////////////////////////////////////////
-*/
 // Sorting Arrays: sort works based on strings
 // Strings
-const owners = ["Dice", "Zach", "Adam", "Martha"];
+const owners = ['Dice', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
 console.log(owners);
 
@@ -507,3 +506,42 @@ console.log(movements);
 // });
 movements.sort((a, b) => b - a);
 console.log(movements);
+/////////////////////////////////////////////////////////////////
+*/
+// More Ways of Creating and Filling Arrays
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+// Empty arrays + fill method
+const x = new Array(7);
+console.log(x);
+// console.log(x.map(() => 5));
+// x.fill(1);
+x.fill(1, 3, 5);
+x.fill(1);
+console.log(x);
+
+arr.fill(23, 5, 6);
+console.log(arr);
+
+// Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(z);
+
+const diceRolls = Array.from({ length: 100 }, () =>
+	Math.trunc(Math.random() * 6 + 1)
+);
+console.log(diceRolls);
+
+labelBalance.addEventListener('click', function () {
+	const movementsUI = Array.from(
+		document.querySelectorAll('.movements__value'),
+		(el) => Number(el.textContent.replace('€', ''))
+	);
+	console.log(movementsUI);
+
+	const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+});
