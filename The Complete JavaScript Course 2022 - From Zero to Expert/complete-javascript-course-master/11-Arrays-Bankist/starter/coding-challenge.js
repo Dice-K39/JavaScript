@@ -49,7 +49,6 @@ const calcAverageHumanAge = (dogAges) => dogAges.map((age) => age <= 2 ? 2 * age
 console.log(calcAverageHumanAge(data1));
 console.log(calcAverageHumanAge(data2));
 /////////////////////////////////////////////////////////////////
-*/
 // Coding Challenge 4
 const dogs = [
 	{ weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
@@ -118,3 +117,5 @@ console.log(goodAmount);
 // 8
 const dogsCopy = dogs.slice();
 console.log(dogsCopy.sort((a, b) => a.recommendedFood - b.recommendedFood));
+/////////////////////////////////////////////////////////////////
+*/
