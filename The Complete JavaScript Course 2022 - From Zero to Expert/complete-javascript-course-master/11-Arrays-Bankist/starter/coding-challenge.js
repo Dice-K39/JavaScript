@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-console.log("--------------- Coding Challenge ---------------");
+console.log('--------------- Coding Challenge ---------------');
 /*
 // Coding Challenge 1
 const checkDogs = function(dogsJulia, dogsKate) 
@@ -50,3 +50,71 @@ console.log(calcAverageHumanAge(data1));
 console.log(calcAverageHumanAge(data2));
 /////////////////////////////////////////////////////////////////
 */
+// Coding Challenge 4
+const dogs = [
+	{ weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+	{ weight: 8, curFood: 200, owners: ['Matilda'] },
+	{ weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+	{ weight: 32, curFood: 340, owners: ['Michael'] }
+];
+
+// 1
+dogs.forEach((dog) => (dog.recommendedFood = dog.weight ** 0.75 * 28));
+console.log(dogs);
+
+// 2
+const dogSarah = dogs.find((dog) => dog.owners.includes('Sarah'));
+console.log(dogSarah);
+console.log(
+	`Sarah's dog is eating ${
+		dogSarah.curFood > dogSarah.recommendedFood ? 'much' : 'little'
+	}`
+);
+// dogs.forEach((dog) =>
+// 	dog.owners.find(function (owner) {
+// 		if (owner === 'Sarah') {
+// 			if (
+// 				dog.curFood > dog.recommendedFood * 0.9 &&
+// 				dog.curFood < dog.recommendedFood * 1.1
+// 			) {
+// 				console.log("Sarah's dog is eating just enough");
+// 			} else if (dog.curFood < dog.recommendedFood * 0.9) {
+// 				console.log("Sarah's dog is eating too little");
+// 			} else if (dog.curFood > dog.recommendedFood * 1.1) {
+// 				console.log("Sarah's dog is eating too much");
+// 			}
+// 		}
+// 	})
+// );
+
+// 3
+const ownersEatTooMuch = dogs
+	.filter((dog) => dog.curFood > dog.recommendedFood)
+	.flatMap((dog) => dog.owners);
+console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+	.filter((dog) => dog.curFood < dog.recommendedFood)
+	.flatMap((dog) => dog.owners);
+console.log(ownersEatTooLittle);
+
+// 4
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`);
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`);
+
+// 5
+console.log(dogs.some((dog) => dog.recommendedFood === dog.curFood));
+
+// 6
+const recommendedPortion = (dog) =>
+	dog.curFood > dog.recommendedFood * 0.9 &&
+	dog.curFood < dog.recommendedFood * 1.1;
+console.log(dogs.some((dog) => recommendedPortion(dog)));
+
+// 7
+const goodAmount = dogs.filter((dog) => recommendedPortion(dog));
+console.log(goodAmount);
+
+// 8
+const dogsCopy = dogs.slice();
+console.log(dogsCopy.sort((a, b) => a.recommendedFood - b.recommendedFood));
