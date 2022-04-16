@@ -406,7 +406,6 @@ console.log(huge + ' is REALLY big!');
 console.log(11n / 3n);
 console.log(10 / 3);
 /////////////////////////////////////////////////////////////////
-*/
 // Creating Dates
 // Create a date
 // const now = new Date();
@@ -441,3 +440,5 @@ console.log(Date.now());
 
 future.setFullYear(2040);
 console.log(future);
+/////////////////////////////////////////////////////////////////
+*/
