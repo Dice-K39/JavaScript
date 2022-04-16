@@ -358,7 +358,6 @@ labelBalance.addEventListener('click', function () {
 	});
 });
 /////////////////////////////////////////////////////////////////
-*/
 // Numeric Separators
 const diameter = 287_460_000_000;
 console.log(diameter);
@@ -374,3 +373,36 @@ console.log(PI);
 
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
+/////////////////////////////////////////////////////////////////
+*/
+// Working with BigInt - ES2020
+console.log(2 ** 53 - 1); // max number able to be stored safely
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+console.log(10298347102973128561265129873120983481290743897n);
+console.log(BigInt(1029834710));
+
+// Operations
+console.log(10000n + 10000n);
+console.log(4328457239857320984752398547239085739825n * 100000000n);
+// console.log(Math.sqrt(16n));
+const huge = 22387238947238947238947348238974n;
+const num = 23;
+// console.log(num * huge); // can't mix
+// console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(20n == 20);
+
+console.log(huge + ' is REALLY big!');
+
+// Divisions
+console.log(11n / 3n);
+console.log(10 / 3);
