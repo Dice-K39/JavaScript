@@ -27,3 +27,25 @@ const jack = new Person('Jack', 1975);
 console.log(matilda, jack);
 
 console.log(dice instanceof Person);
+
+// 209 Prototypes
+console.log(Person.prototype);
+Person.prototype.calcAge = function () {
+	console.log(2037 - this.birthYear);
+};
+
+dice.calcAge();
+matilda.calcAge();
+
+console.log(dice.__proto__);
+console.log(dice.__proto__ === Person.prototype);
+
+console.log(Person.prototype.isPrototypeOf(dice));
+console.log(Person.prototype.isPrototypeOf(matilda));
+console.log(Person.prototype.isPrototypeOf(Person));
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(dice.species, matilda.species);
+
+console.log(dice.hasOwnProperty('firstName'));
+console.log(dice.hasOwnProperty('species'));
