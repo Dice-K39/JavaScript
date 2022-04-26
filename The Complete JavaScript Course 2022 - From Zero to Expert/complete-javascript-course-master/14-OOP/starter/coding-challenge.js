@@ -1,7 +1,7 @@
 'use strict';
 
 console.log('--------------- Coding Challenge ---------------');
-
+/*
 // Coding Challenge 1
 // 1
 const Car = function (make, speed) {
@@ -36,3 +36,5 @@ mercedes.brake();
 mercedes.brake();
 mercedes.brake();
 mercedes.accelerate();
+/////////////////////////////////////////////////////////////////
+*/
