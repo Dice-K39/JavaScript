@@ -1,6 +1,7 @@
 'use strict';
 
 console.log('--------------- Lecture ---------------');
+/*
 /////////////////////////////////////////////////////////////////
 // 208 - Constructor Functions and the new Operator
 const Person = function (firstName, birthYear) {
@@ -72,3 +73,5 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir((x) => x + 1);
+/////////////////////////////////////////////////////////////////
+*/
