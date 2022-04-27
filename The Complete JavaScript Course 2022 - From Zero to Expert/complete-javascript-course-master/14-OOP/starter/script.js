@@ -1,7 +1,7 @@
 'use strict';
 
 console.log('--------------- Lecture ---------------');
-/*
+
 /////////////////////////////////////////////////////////////////
 // 208 - Constructor Functions and the new Operator
 const Person = function (firstName, birthYear) {
@@ -29,6 +29,12 @@ console.log(matilda, jack);
 
 console.log(dice instanceof Person);
 
+Person.hey = function () {
+	console.log('Hey there 👋');
+	console.log(this);
+};
+Person.hey();
+/////////////////////////////////////////////////////////////////
 // 209 - Prototypes
 console.log(Person.prototype);
 Person.prototype.calcAge = function () {
@@ -74,7 +80,6 @@ console.log(arr.unique());
 const h1 = document.querySelector('h1');
 console.dir((x) => x + 1);
 /////////////////////////////////////////////////////////////////
-*/
 // 213 - ES6 Classes
 // class expression
 // const PersonCl = class {}
@@ -99,6 +104,7 @@ class PersonCl {
 		return 2037 - this.birthYear;
 	}
 
+	// Instance methods
 	// Set a property that already exists
 	set fullName(name) {
 		if (name.includes(' ')) {
@@ -110,6 +116,12 @@ class PersonCl {
 
 	get fullName() {
 		return this._fullName;
+	}
+
+	// Static method
+	static hey() {
+		console.log('Hey there 👋');
+		console.log(this);
 	}
 }
 
@@ -131,6 +143,8 @@ jessica.greet();
 
 const walter = new PersonCl('Walter White', 1965);
 
+PersonCl.hey();
+/////////////////////////////////////////////////////////////////
 // 214 - Setters and Getters
 const account = {
 	owner: 'dice',
