@@ -37,7 +37,6 @@ mercedes.brake();
 mercedes.brake();
 mercedes.accelerate();
 /////////////////////////////////////////////////////////////////
-*/
 // Coding Challenge 2
 // 1
 class CarCl {
@@ -72,3 +71,5 @@ ford.accelerate();
 ford.brake();
 ford.speedUS = 50;
 console.log(ford);
+/////////////////////////////////////////////////////////////////
+*/
