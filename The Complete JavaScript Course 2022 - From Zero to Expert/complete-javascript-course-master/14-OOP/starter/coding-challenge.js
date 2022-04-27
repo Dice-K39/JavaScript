@@ -18,7 +18,6 @@ Car.prototype.accelerate = function () {
 Car.prototype.brake = function () {
 	console.log((this.speed -= 5));
 };
-
 // 4
 const bmw = new Car('BMW', 120);
 const mercedes = new Car('Mercedes', 95);
@@ -73,3 +72,43 @@ ford.speedUS = 50;
 console.log(ford);
 /////////////////////////////////////////////////////////////////
 */
+const Car = function (make, speed) {
+	this.make = make;
+	this.speed = speed;
+};
+
+Car.prototype.accelerate = function () {
+	console.log((this.speed += 10));
+};
+
+Car.prototype.brake = function () {
+	console.log((this.speed -= 5));
+};
+
+// Coding Challenge 3
+// 1
+const EV = function (make, speed, charge) {
+	Car.call(this, make, speed);
+	this.charge = charge;
+};
+EV.prototype = Object.create(Car.prototype);
+
+// 2
+EV.prototype.chargeBattery = function (chargeTo) {
+	this.charge = chargeTo;
+};
+
+// 3
+EV.prototype.accelerate = function () {
+	this.speed += 20;
+	this.charge--;
+	console.log(`${this.make} is going at ${this.speed} km/h, with a charge of ${this.charge}.`);
+};
+
+// 4
+const tesla = new EV('Tesla', 120, 23);
+tesla.chargeBattery(90);
+console.log(tesla);
+tesla.brake();
+tesla.brake();
+tesla.accelerate();
