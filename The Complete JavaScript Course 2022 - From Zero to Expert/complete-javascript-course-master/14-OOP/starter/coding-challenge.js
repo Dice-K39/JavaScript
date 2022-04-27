@@ -71,7 +71,6 @@ ford.brake();
 ford.speedUS = 50;
 console.log(ford);
 /////////////////////////////////////////////////////////////////
-*/
 const Car = function (make, speed) {
 	this.make = make;
 	this.speed = speed;
@@ -112,3 +111,5 @@ console.log(tesla);
 tesla.brake();
 tesla.brake();
 tesla.accelerate();
+/////////////////////////////////////////////////////////////////
+*/
