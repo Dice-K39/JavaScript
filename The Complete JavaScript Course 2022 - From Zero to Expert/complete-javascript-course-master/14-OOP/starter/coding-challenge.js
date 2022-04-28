@@ -112,7 +112,6 @@ tesla.brake();
 tesla.brake();
 tesla.accelerate();
 /////////////////////////////////////////////////////////////////
-*/
 // Coding Challenge 4
 class CarCl {
 	constructor(make, speed) {
@@ -178,3 +177,5 @@ rivian
 	.brake()
 	.brake();
 console.log(rivian.speedUS);
+/////////////////////////////////////////////////////////////////
+*/
