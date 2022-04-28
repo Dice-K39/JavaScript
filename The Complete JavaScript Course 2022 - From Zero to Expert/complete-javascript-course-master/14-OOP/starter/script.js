@@ -186,7 +186,6 @@ console.log(steven.__proto__ === PersonProto);
 const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1979);
 sarah.calcAge();
-*/
 /////////////////////////////////////////////////////////////////
 // 218 - Inheritance Between "Classes": Constructor Functions
 const Person = function (firstName, birthYear) {
@@ -223,3 +222,67 @@ console.log(mike instanceof Object);
 
 Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor);
+/////////////////////////////////////////////////////////////////
+*/
+// 220 - Inheritance Between "Classes": ES6 Classes
+class PersonCl {
+	constructor(fullName, birthYear) {
+		this.fullName = fullName;
+		this.birthYear = birthYear;
+	}
+
+	// Methods will be added to .prototype property
+	calcAge() {
+		console.log(2037 - this.birthYear);
+	}
+
+	greet() {
+		console.log(`Hey ${this.firstName}`);
+	}
+
+	get age() {
+		return 2037 - this.birthYear;
+	}
+
+	// Instance methods
+	// Set a property that already exists
+	set fullName(name) {
+		if (name.includes(' ')) {
+			this._fullName = name;
+		} else {
+			alert(`${name} is not a full name`);
+		}
+	}
+
+	get fullName() {
+		return this._fullName;
+	}
+
+	// Static method
+	static hey() {
+		console.log('Hey there 👋');
+	}
+}
+
+class StudentCl extends PersonCl {
+	constructor(fullName, birthYear, course) {
+		super(fullName, birthYear); // Need to happen first
+		this.course = course; // Won't be able to use this if super isn't first
+	}
+
+	introduce() {
+		console.log(`My name is ${this.fullName} and I study ${this.course}`);
+	}
+
+	calcAge() {
+		console.log(
+			`I'm ${2037 - this.birthYear} years old, but as a student I feel more like ${
+				2037 - this.birthYear + 10
+			}`
+		);
+	}
+}
+
+const martha = new StudentCl('Martha Jones', 2012, 'Computer Science');
+martha.introduce();
+martha.calcAge();
