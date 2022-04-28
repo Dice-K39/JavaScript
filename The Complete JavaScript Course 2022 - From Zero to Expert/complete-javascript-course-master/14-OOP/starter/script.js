@@ -417,7 +417,6 @@ console.log(acc1.getMovements());
 console.log(acc1);
 console.log(acc1.pin);
 /////////////////////////////////////////////////////////////////
-*/
 // 224 - Encapsulation: Private Properties and Methods
 // Public fields and methods
 // Private fields and methods
@@ -496,3 +495,5 @@ Account.helper();
 // 225 - Chaining Methods
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 console.log(acc1.getMovements());
+/////////////////////////////////////////////////////////////////
+*/
