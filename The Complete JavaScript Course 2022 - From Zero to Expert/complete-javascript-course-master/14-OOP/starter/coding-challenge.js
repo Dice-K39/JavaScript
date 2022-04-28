@@ -71,6 +71,7 @@ ford.brake();
 ford.speedUS = 50;
 console.log(ford);
 /////////////////////////////////////////////////////////////////
+// Coding Challenge 3
 const Car = function (make, speed) {
 	this.make = make;
 	this.speed = speed;
@@ -84,7 +85,6 @@ Car.prototype.brake = function () {
 	console.log((this.speed -= 5));
 };
 
-// Coding Challenge 3
 // 1
 const EV = function (make, speed, charge) {
 	Car.call(this, make, speed);
@@ -113,3 +113,68 @@ tesla.brake();
 tesla.accelerate();
 /////////////////////////////////////////////////////////////////
 */
+// Coding Challenge 4
+class CarCl {
+	constructor(make, speed) {
+		this.make = make;
+		this.speed = speed;
+	}
+
+	accelerate() {
+		console.log(`The ${this.make} increased its speed to ${(this.speed += 10)} km/h.`);
+	}
+
+	brake() {
+		console.log(`The ${this.make} decreased its speed to ${(this.speed -= 5)} km/h.`);
+
+		return this;
+	}
+
+	get speedUS() {
+		return this.speed / 1.6;
+	}
+
+	set speedUS(speed) {
+		this.speed = speed * 1.6;
+	}
+}
+
+// 1
+class EVCl extends CarCl {
+	// 2
+	#charge;
+
+	constructor(make, speed, charge) {
+		super(make, speed);
+		this.#charge = charge;
+	}
+
+	// 3
+	chargeBattery(chargeTo) {
+		this.#charge = chargeTo;
+
+		return this;
+	}
+
+	accelerate() {
+		this.speed += 20;
+		this.#charge--;
+		console.log(
+			`${this.make} is going at ${this.speed} km/h, with a charge of ${this.#charge}.`
+		);
+
+		return this;
+	}
+}
+
+const rivian = new EVCl('Rivian', 120, 23);
+rivian
+	.chargeBattery(50)
+	.accelerate()
+	.brake()
+	.accelerate()
+	.accelerate()
+	.chargeBattery(75)
+	.brake()
+	.brake();
+console.log(rivian.speedUS);
