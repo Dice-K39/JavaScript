@@ -366,7 +366,6 @@ console.log(acc1.getMovements());
 console.log(acc1);
 console.log(acc1.pin);
 /////////////////////////////////////////////////////////////////
-*/
 // 223 - Encapsulation: Protected Properties and Methods
 class Account {
 	constructor(owner, currency, pin) {
@@ -399,7 +398,7 @@ class Account {
 	}
 
 	requestLoan(value) {
-		if (this.approveLoan(value)) {
+		if (this._approveLoan(value)) {
 			this.deposit(value);
 			console.log('Loan approved');
 		}
@@ -417,3 +416,73 @@ acc1.approveLoan(1000);
 console.log(acc1.getMovements());
 console.log(acc1);
 console.log(acc1.pin);
+/////////////////////////////////////////////////////////////////
+*/
+// 224 - Encapsulation: Private Properties and Methods
+// Public fields and methods
+// Private fields and methods
+// Static fields and methods
+class Account {
+	// Public fields (instances)
+	locale = navigator.language;
+
+	// Private fields
+	#movements = [];
+	#pin;
+
+	constructor(owner, currency, pin) {
+		this.owner = owner;
+		this.currency = currency;
+		this.#pin = pin;
+
+		console.log(`Thanks for opening an account, ${owner}`);
+	}
+
+	// Public methods/interfaces
+	getMovements() {
+		return this.#movements;
+	}
+
+	deposit(value) {
+		this.#movements.push(value);
+	}
+
+	withdraw(value) {
+		this.deposit(-value);
+	}
+
+	requestLoan(value) {
+		// if (this.#approveLoan(value)) {
+		if (this._approveLoan(value)) {
+			this.deposit(value);
+			console.log('Loan approved');
+		}
+	}
+
+	static helper() {
+		console.log('Helper');
+	}
+
+	// Private methods
+	// Not implemented in Google Chrome
+	// #approveLoan(value) {
+	_approveLoan(value) {
+		return true;
+	}
+}
+
+const acc1 = new Account('Dice', 'USD', 1111);
+
+// acc1._movements.push(250);
+// acc1._movements.push(-140);
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(1000);
+console.log(acc1.getMovements());
+console.log(acc1);
+
+// console.log(acc1.#movements);
+// console.log(acc1.#pin);
+// acc1.#approveLoan(1000); // shows as a private field instead of a private method
+
+Account.helper();
