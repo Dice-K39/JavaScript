@@ -445,10 +445,14 @@ class Account {
 
 	deposit(value) {
 		this.#movements.push(value);
+
+		return this;
 	}
 
 	withdraw(value) {
 		this.deposit(-value);
+
+		return this;
 	}
 
 	requestLoan(value) {
@@ -457,6 +461,8 @@ class Account {
 			this.deposit(value);
 			console.log('Loan approved');
 		}
+
+		return this;
 	}
 
 	static helper() {
@@ -480,9 +486,13 @@ acc1.withdraw(140);
 acc1.requestLoan(1000);
 console.log(acc1.getMovements());
 console.log(acc1);
+Account.helper();
 
 // console.log(acc1.#movements);
 // console.log(acc1.#pin);
 // acc1.#approveLoan(1000); // shows as a private field instead of a private method
 
-Account.helper();
+/////////////////////////////////////////////////////////////////
+// 225 - Chaining Methods
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+console.log(acc1.getMovements());
