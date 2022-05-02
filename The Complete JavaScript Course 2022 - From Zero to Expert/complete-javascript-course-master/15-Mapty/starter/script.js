@@ -330,3 +330,16 @@ class App {
 }
 
 const app = new App();
+
+/*
+// Additional features for Project
+1 Edit and delete workout by user
+2 Delete all workouts by user
+3 Sort workouts by certain fields
+4 Re-build Running and Cycling objects coming from local storage
+5 More realistic error and confirmation messages
+6 Ability to position the map to show all workouts
+7 Ability to draw lines and shapes instead of just points on map
+8 Geocode location from coordinates
+9 Display weather data for workout time and place
+*/
