@@ -151,8 +151,22 @@ const renderCountry = function (data, className = '') {
 // 		});
 // };
 const getCountryData = function (country) {
+	// Country 1
 	fetch(`https://restcountries.com/v2/name/${country}`)
 		.then((res) => res.json())
-		.then(([data]) => renderCountry(data));
+		.then(([data]) => {
+			renderCountry(data);
+
+			const neighbor = data.borders?.[0];
+
+			if (!neighbor) {
+				return;
+			}
+
+			// Country 2
+			return fetch(`https://restcountries.com/v2/alpha/${neighbor}`);
+		})
+		.then((res) => res.json())
+		.then((data) => renderCountry(data, 'neighbor'));
 };
 getCountryData('usa');
