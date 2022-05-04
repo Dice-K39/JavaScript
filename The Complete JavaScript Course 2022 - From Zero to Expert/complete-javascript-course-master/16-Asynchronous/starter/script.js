@@ -2,6 +2,8 @@
 
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
+
+console.log('--------------- Lecture ---------------');
 /*
 ///////////////////////////////////////
 // 248 - Our First AJAX Call: XMLHttpRequest
@@ -230,7 +232,6 @@ btn.addEventListener('click', function () {
 
 getCountryData('qweofij');
 /////////////////////////////////////////////////////////////////
-*/
 // 255 - Throwing Errors Manually
 const renderCountry = function (data, className = '') {
 	const html = `
@@ -312,3 +313,5 @@ btn.addEventListener('click', function () {
 });
 
 getCountryData('australia');
+/////////////////////////////////////////////////////////////////
+*/
