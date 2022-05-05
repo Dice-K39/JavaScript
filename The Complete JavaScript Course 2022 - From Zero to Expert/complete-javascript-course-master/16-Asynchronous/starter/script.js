@@ -378,7 +378,6 @@ wait(2)
 Promise.resolve('abc').then((x) => console.log(x));
 Promise.reject(new Error('Problem!')).catch((x) => console.log(x));
 /////////////////////////////////////////////////////////////////
-*/
 // 260 - Promisifying the Geolocation API
 
 const getPosition = function () {
@@ -426,3 +425,5 @@ const whereAmI = function (lat, lng) {
 };
 
 btn.addEventListener('click', whereAmI);
+/////////////////////////////////////////////////////////////////
+*/

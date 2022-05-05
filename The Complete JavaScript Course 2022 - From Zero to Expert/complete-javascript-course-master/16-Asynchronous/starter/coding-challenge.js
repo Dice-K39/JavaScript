@@ -103,3 +103,58 @@ whereAmI(-33.933, 18.474);
 // whereAmI(123123, 141515);
 /////////////////////////////////////////////////////////////////
 */
+// Coding Challenge 2
+let currentImg;
+const imgContainer = document.querySelector('.images');
+const wait = function (seconds) {
+	return new Promise(function (resolve) {
+		setTimeout(resolve, seconds * 1000);
+	});
+};
+
+// 1
+const createImage = function (imgPath) {
+	return new Promise(function (resolve, reject) {
+		// 2
+		const image = document.createElement('img');
+		image.src = imgPath;
+
+		image.addEventListener('load', function () {
+			imgContainer.append(image);
+
+			resolve(image);
+		});
+
+		image.addEventListener('error', function () {
+			reject(new Error('Image not found'));
+		});
+	});
+};
+
+// 4
+createImage('img/img-1.jpg')
+	.then((img) => {
+		currentImg = img;
+		console.log('Image 1 loaded');
+
+		// 5
+		return wait(2);
+	})
+	.then(() => {
+		// 6
+		currentImg.style.display = 'none';
+
+		return createImage('img/img-2.jpg');
+	})
+	.then((img) => {
+		currentImg = img;
+		console.log('Image 2 loaded');
+
+		//7
+		return wait(2);
+	})
+	.then(() => {
+		// 8
+		currentImg.style.display = 'none';
+	})
+	.catch((err) => console.error(err));
