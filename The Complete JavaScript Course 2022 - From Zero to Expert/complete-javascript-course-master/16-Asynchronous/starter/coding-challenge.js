@@ -1,6 +1,8 @@
 'use strict';
 
 console.log('--------------- Coding Challenge ---------------');
+/*
+/////////////////////////////////////////////////////////////////
 // Coding Challenge 1
 const getJSON = function (url, errorMsg = 'Something went wrong') {
 	return fetch(url).then((res) => {
@@ -99,3 +101,5 @@ whereAmI(52.508, 13.381);
 whereAmI(19.037, 72.873);
 whereAmI(-33.933, 18.474);
 // whereAmI(123123, 141515);
+/////////////////////////////////////////////////////////////////
+*/

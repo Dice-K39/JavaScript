@@ -315,3 +315,14 @@ btn.addEventListener('click', function () {
 getCountryData('australia');
 /////////////////////////////////////////////////////////////////
 */
+// 258 - The Event Loop in practice
+console.log('Test start'); // 1
+setTimeout(() => console.log('0 sec timer'), 0); // 4 (in callback queue)
+Promise.resolve(`Resolved promise 1`).then((res) => console.log(res)); // 3 (in microtasks queue; has priority to callback queue)
+
+Promise.resolve('Resolved promise 2').then((res) => {
+	for (let i = 0; i < 1000000000; i++) {}
+	console.log(res);
+});
+
+console.log('Test end'); // 2
