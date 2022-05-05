@@ -102,7 +102,6 @@ whereAmI(19.037, 72.873);
 whereAmI(-33.933, 18.474);
 // whereAmI(123123, 141515);
 /////////////////////////////////////////////////////////////////
-*/
 // Coding Challenge 2
 let currentImg;
 const imgContainer = document.querySelector('.images');
@@ -158,3 +157,5 @@ createImage('img/img-1.jpg')
 		currentImg.style.display = 'none';
 	})
 	.catch((err) => console.error(err));
+/////////////////////////////////////////////////////////////////
+*/
