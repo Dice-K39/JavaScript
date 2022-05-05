@@ -326,7 +326,6 @@ Promise.resolve('Resolved promise 2').then((res) => {
 
 console.log('Test end'); // 2
 /////////////////////////////////////////////////////////////////
-*/
 // 259 - Building a Simple Promise
 // Promise takes an executor function that passes in a resolve and a reject function
 const lottery = new Promise(function (resolve, reject) {
@@ -378,3 +377,52 @@ wait(2)
 
 Promise.resolve('abc').then((x) => console.log(x));
 Promise.reject(new Error('Problem!')).catch((x) => console.log(x));
+/////////////////////////////////////////////////////////////////
+*/
+// 260 - Promisifying the Geolocation API
+
+const getPosition = function () {
+	return new Promise(function (resolve, reject) {
+		// navigator.geolocation.getCurrentPosition(
+		// 	(position) => resolve(position),
+		// 	(err) => reject(err)
+		// );
+		navigator.geolocation.getCurrentPosition(resolve, reject);
+	});
+};
+
+// getPosition().then((pos) => console.log(pos));
+
+const whereAmI = function (lat, lng) {
+	getPosition()
+		.then((pos) => {
+			const { latitude: lat, longitude: lng } = pos.coords;
+
+			return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+		})
+		.then((res) => {
+			if (!res.ok) {
+				throw new Error(
+					`API only allows 3 requests per second. Please wait. (Error Code: ${res.status})`
+				);
+			}
+
+			return res.json();
+		})
+		.then((data) => {
+			console.log(data);
+
+			if (data.error) {
+				throw new Error(`Data not found. ${data.error.description}`);
+			}
+
+			console.log(`You are in ${data.city}, ${data.country}.`);
+
+			return fetch(`https://restcountries.com/${data.country}`);
+		})
+		.catch((err) => {
+			console.error(`${err.message}`);
+		});
+};
+
+btn.addEventListener('click', whereAmI);
