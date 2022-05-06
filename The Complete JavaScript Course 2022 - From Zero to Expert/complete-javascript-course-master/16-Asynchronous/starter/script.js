@@ -672,7 +672,6 @@ const get3Countries = async function (c1, c2, c3) {
 };
 get3Countries('usa', 'canada', 'japan');
 /////////////////////////////////////////////////////////////////
-*/
 // 266 - Other Promise Combinators: race, allSettled and any
 const getJSON = function (url, errorMsg = 'Something went wrong') {
 	return fetch(url).then((res) => {
@@ -730,3 +729,5 @@ Promise.any([
 ])
 	.then((res) => console.log(res))
 	.catch((err) => console.error(err));
+/////////////////////////////////////////////////////////////////
+*/

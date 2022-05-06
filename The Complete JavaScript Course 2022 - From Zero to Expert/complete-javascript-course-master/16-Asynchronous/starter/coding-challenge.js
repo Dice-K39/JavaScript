@@ -159,3 +159,70 @@ createImage('img/img-1.jpg')
 	.catch((err) => console.error(err));
 /////////////////////////////////////////////////////////////////
 */
+// Coding Challenge 3
+const imgContainer = document.querySelector('.images');
+const wait = function (seconds) {
+	return new Promise(function (resolve) {
+		setTimeout(resolve, seconds * 1000);
+	});
+};
+
+const createImage = function (imgPath) {
+	return new Promise(function (resolve, reject) {
+		const image = document.createElement('img');
+		image.src = imgPath;
+
+		image.addEventListener('load', function () {
+			imgContainer.append(image);
+
+			resolve(image);
+		});
+
+		image.addEventListener('error', function () {
+			reject(new Error('Image not found'));
+		});
+	});
+};
+
+// Part 1
+// 1
+const loadNPause = async function () {
+	try {
+		let img = await createImage('img/img-1.jpg');
+
+		console.log('Image 1 loaded');
+		await wait(2);
+		img.style.display = 'none';
+
+		img = await createImage('img/img-2.jpg');
+
+		console.log('Image 2 loaded');
+		await wait(2);
+		img.style.display = 'none';
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+// Part 2
+// 1
+const loadAll = async function (imgArr) {
+	try {
+		// 2
+		const imgs = imgArr.map(async (img) => await createImage(img));
+
+		// 3
+		// console.log(imgs);
+
+		// 4
+		const imgsElements = await Promise.all(imgs);
+
+		// 5
+		imgsElements.forEach((img) => img.classList.add('parallel'));
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+// loadNPause();
+loadAll(['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg']);
