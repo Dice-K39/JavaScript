@@ -641,8 +641,7 @@ console.log('1: Will get location');
 	console.log('3: Finished getting location');
 })();
 /////////////////////////////////////////////////////////////////
-*/
-// Running Promises in Parallel
+// 265 - Running Promises in Parallel
 const getJSON = function (url, errorMsg = 'Something went wrong') {
 	return fetch(url).then((res) => {
 		if (!res.ok) {
@@ -672,3 +671,62 @@ const get3Countries = async function (c1, c2, c3) {
 	}
 };
 get3Countries('usa', 'canada', 'japan');
+/////////////////////////////////////////////////////////////////
+*/
+// 266 - Other Promise Combinators: race, allSettled and any
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+	return fetch(url).then((res) => {
+		if (!res.ok) {
+			throw new Error(`${errorMsg} (${res.status})`);
+		}
+
+		return res.json();
+	});
+};
+
+// Promise.race - returns a promise; promise settles when any of the input promises settled
+(async function () {
+	const res = await Promise.race([
+		getJSON(`https://restcountries.com/v2/name/usa`),
+		getJSON(`https://restcountries.com/v2/name/canada`),
+		getJSON(`https://restcountries.com/v2/name/japan`)
+	]);
+
+	console.log(res[0]);
+})();
+
+const timeout = function (sec) {
+	return new Promise(function (_, reject) {
+		setTimeout(function () {
+			reject(new Error('Request took too long'));
+		}, sec * 1000);
+	});
+};
+
+Promise.race([getJSON(`https://restcountries.com/v2/name/usa`), timeout(5)])
+	.then((res) => console.log(res[0]))
+	.catch((err) => console.error(err));
+
+// Promise.allSettled - (ES2020) return an array of all settled promises; never short-circuits like Promise.all
+Promise.allSettled([
+	Promise.resolve('Success'),
+	Promise.reject('ERROR'),
+	Promise.resolve('Another Success')
+]).then((res) => console.log(res));
+
+Promise.all([
+	Promise.resolve('Success'),
+	Promise.reject('ERROR'),
+	Promise.resolve('Another Success')
+])
+	.then((res) => console.log(res))
+	.catch((err) => console.error(err));
+
+// Promise.any - (ES2021) returns first fulfilled promise; rejected results are ignored unless all are rejected
+Promise.any([
+	Promise.resolve('Success'),
+	Promise.reject('ERROR'),
+	Promise.resolve('Another Success')
+])
+	.then((res) => console.log(res))
+	.catch((err) => console.error(err));
