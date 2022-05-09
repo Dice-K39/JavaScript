@@ -1,5 +1,4 @@
 console.log('--------------- Lecture ---------------');
-/*
 ///////////////////////////////////////
 // 272 - Exporting and Importing in ES6 Modules
 // import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
@@ -21,7 +20,7 @@ add('bread', 5);
 add('apples', 4);
 
 console.log(cart);
-
+/*
 ///////////////////////////////////////
 // 273 - Top-Level await (ES2022) - blocks entire module from running (technically runs synchronous)
 // console.log('Start fetching');
@@ -86,7 +85,8 @@ const { addToCart } = require("./shoppingCart.js");
 ///////////////////////////////////////
 */
 // 237 Introduction to NPM
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 
 const state = {
 	cart: [
@@ -102,3 +102,30 @@ state.user.loggedIn = false;
 console.log(stateClone);
 
 console.log(stateDeepClone);
+///////////////////////////////////////
+// 278 - Bundling with Parcel and NPM Scripts
+if (module.hot) {
+	module.hot.accept();
+}
+///////////////////////////////////////
+// 279 - Configuring Babel and Polyfilling
+class Person {
+	#greeting = 'Hey';
+	constructor(name) {
+		this.name = name;
+		console.log(`${this.#greeting}, ${this.name}`);
+	}
+}
+const dice = new Person('Dice');
+
+console.log('Dice' ?? null);
+
+console.log(cart.find((el) => el.quantity >= 2));
+Promise.resolve('TEST').then((x) => console.log(x));
+
+import 'core-js/stable';
+// import 'core-js/stable/array/find';
+// import "core-js/stable/promise"
+
+// Polyfilling async functions
+import 'regenerator-runtime/runtime';
