@@ -118,7 +118,6 @@ const logBigExpenses = function (bigLimit) {
 console.log(budget);
 logBigExpenses(1000);
 //////////////////////////////////////////////////////////////////////////////
-*/
 // 283 - Let's Fix Some Bad Code: Part 2
 const budget = Object.freeze([
 	{ value: 250, description: 'Sold old TV 📺', user: 'jonas' },
@@ -172,3 +171,4 @@ const logBigExpenses = function (state, bigLimit) {
 };
 
 logBigExpenses(finalBudget, 1000);
+*/
