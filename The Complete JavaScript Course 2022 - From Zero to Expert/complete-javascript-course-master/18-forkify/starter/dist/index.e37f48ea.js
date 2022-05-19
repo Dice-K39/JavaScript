@@ -534,6 +534,8 @@ var _searchViewJs = require("./views/searchView.js");
 var _searchViewJsDefault = parcelHelpers.interopDefault(_searchViewJs);
 var _resultsViewJs = require("./views/resultsView.js");
 var _resultsViewJsDefault = parcelHelpers.interopDefault(_resultsViewJs);
+var _paginationViewJs = require("./views/paginationView.js");
+var _paginationViewJsDefault = parcelHelpers.interopDefault(_paginationViewJs);
 // if (module.hot) {
 // 	module.hot.accept();
 // }
@@ -560,18 +562,27 @@ const controlSearchResults = async function() {
         await _modelJs.loadSearchResults(query);
         // 3 Render results
         // resultsView.render(model.state.search.results);
-        _resultsViewJsDefault.default.render(_modelJs.getSearchResultsPage());
+        _resultsViewJsDefault.default.render(_modelJs.getSearchResultsPage(3));
+        // 4 Render initial pagination buttons
+        _paginationViewJsDefault.default.render(_modelJs.state.search);
     } catch (err) {
         console.log(err);
     }
 };
+const controlPagination = function(goToPage) {
+    // 3 Render new results
+    _resultsViewJsDefault.default.render(_modelJs.getSearchResultsPage(goToPage));
+    // 4 Render new pagination buttons
+    _paginationViewJsDefault.default.render(_modelJs.state.search);
+};
 const init = function() {
     _recipeViewJsDefault.default.addHandlerRender(controlRecipes);
     _searchViewJsDefault.default.addHandlerSearch(controlSearchResults);
+    _paginationViewJsDefault.default.addHandlerClick(controlPagination);
 };
 init();
 
-},{"./model.js":"Y4A21","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","./views/resultsView.js":"cSbZE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Y4A21":[function(require,module,exports) {
+},{"./model.js":"Y4A21","./views/recipeView.js":"l60JC","./views/searchView.js":"9OQAM","./views/resultsView.js":"cSbZE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./views/paginationView.js":"6z7bi"}],"Y4A21":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state
@@ -1034,14 +1045,11 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _viewJs = require("./view.js");
 var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
-var _iconsSvg = require("url:../../img/icons.svg");
-var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
 class ResultsView extends _viewJsDefault.default {
     _parentElement = document.querySelector('.results');
     _errorMessage = 'No recipes found for your query. Please try again.';
     _message = '';
     _generateMarkup() {
-        console.log(this._data);
         return this._data.map(this._generateMarkupPreview).join('');
     }
     _generateMarkupPreview(result) {
@@ -1063,6 +1071,61 @@ class ResultsView extends _viewJsDefault.default {
 }
 exports.default = new ResultsView();
 
-},{"./view.js":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9GjUt","aenu9"], "aenu9", "parcelRequire3a11")
+},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6z7bi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _viewJs = require("./view.js");
+var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
+var _iconsSvg = require("url:../../img/icons.svg");
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
+class PaginationView extends _viewJsDefault.default {
+    _parentElement = document.querySelector('.pagination');
+    addHandlerClick(handler) {
+        this._parentElement.addEventListener('click', function(e) {
+            const btn = e.target.closest('.btn--inline');
+            if (!btn) return;
+            const goToPage = +btn.dataset.goto;
+            handler(goToPage);
+        });
+    }
+    _generateMarkupButtonNext(currentPage) {
+        return `
+            <button data-goto="${currentPage + 1}" class="btn--inline pagination__btn--next">
+                <span>Page ${currentPage + 1}</span>
+                <svg class="search__icon">
+                    <use href="${_iconsSvgDefault.default}#icon-arrow-right"></use>
+                </svg>
+            </button>
+        `;
+    }
+    _generateMarkupButtonPrevious(currentPage) {
+        return `
+            <button data-goto="${currentPage - 1}" class="btn--inline pagination__btn--prev">
+                <svg class="search__icon">
+                    <use href="${_iconsSvgDefault.default}#icon-arrow-left"></use>
+                </svg>
+                <span>Page ${currentPage - 1}</span>
+            </button>
+        `;
+    }
+    _generateMarkup() {
+        const currentPage = this._data.page;
+        const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
+        // Page 1 and there are other pages
+        if (currentPage === 1 && numPages > 1) return this._generateMarkupButtonNext(currentPage);
+        // Last page
+        if (currentPage === numPages && numPages > 1) return this._generateMarkupButtonPrevious(currentPage);
+        // Other page
+        if (currentPage < numPages) return [
+            this._generateMarkupButtonPrevious(currentPage),
+            this._generateMarkupButtonNext(currentPage)
+        ];
+        // Page 1 and there are NO other pages
+        return '';
+    }
+}
+exports.default = new PaginationView();
+
+},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","url:../../img/icons.svg":"loVOp"}]},["9GjUt","aenu9"], "aenu9", "parcelRequire3a11")
 
 //# sourceMappingURL=index.e37f48ea.js.map
