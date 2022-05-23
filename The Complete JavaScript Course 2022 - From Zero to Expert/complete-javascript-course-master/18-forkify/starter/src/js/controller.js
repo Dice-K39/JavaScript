@@ -1,6 +1,3 @@
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
-
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
@@ -116,6 +113,12 @@ const controlAddRecipe = async function (newRecipe) {
 
 		// Success message
 		addRecipeView.renderMessage();
+
+		// Render bookmark view
+		bookmarksView.render(model.state.bookmarks);
+
+		// Change ID in URL
+		window.history.pushState(null, '', `#${model.state.recipe.id}`);
 
 		// Close form window
 		setTimeout(function () {
