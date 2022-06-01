@@ -14,27 +14,53 @@ const ExpenseForm = () => {
 	});
 
 	const titleChangeHandler = (e) => {
-		// setEnteredTitle(e.target.value);
-		setUserInput({
-			...userInput,
-			enteredTitle: e.target.value
-		});
+		setEnteredTitle(e.target.value);
+
+		// Not Recommended Way
+		// setUserInput({
+		// 	...userInput,
+		// 	enteredTitle: e.target.value
+		// });
+
+		// setUserInput((prevState) => {
+		//     return {
+		//         ...prevState, enteredTitle: e.target.value
+		//     }
+		// })
 	};
 
 	const amountChangeHandler = (e) => {
-		// setEnteredAmount(e.target.value);
-		setUserInput({
-			...userInput,
-			enteredAmount: e.target.value
-		});
+		setEnteredAmount(e.target.value);
+
+		// Not Recommended Way
+		// setUserInput({
+		// 	...userInput,
+		// 	enteredAmount: e.target.value
+		// });
+
+		// setUserInput((prevState) => {
+		// 	return {
+		// 		...prevState,
+		// 		enteredAmount: e.target.value
+		// 	};
+		// });
 	};
 
 	const dateChangeHandler = (e) => {
-		// setEnteredDate(e.target.value);
-		setUserInput({
-			...userInput,
-			enteredDate: e.target.value
-		});
+		setEnteredDate(e.target.value);
+
+		// Not Recommended Way
+		// setUserInput({
+		// 	...userInput,
+		// 	enteredDate: e.target.value
+		// });
+
+		// setUserInput((prevState) => {
+		// 	return {
+		// 		...prevState,
+		// 		enteredDate: e.target.value
+		// 	};
+		// });
 	};
 
 	return (
