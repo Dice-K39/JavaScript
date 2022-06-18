@@ -1,3 +1,4 @@
+import React from 'react';
 import Expenses from './components/Expenses';
 
 function App() {
@@ -22,6 +23,17 @@ function App() {
 			date: new Date(2021, 5, 12)
 		}
 	];
+
+	// createElement: under the hood code when using JSX - takes 3 arguments
+	// 1 element that should be created
+	// 2 an object that configures this element
+	// 3 content between opening and closing tag (can have infinitely long list of contents of React.createElement)
+	// return React.createElement(
+	// 	'div',
+	// 	{},
+	// 	React.createElement('h2', {}, "Let's get started!"),
+	// 	React.createElement(Expenses, { expenses: expenses })
+	// );
 
 	return (
 		<div>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './Card.css';
 
 // props.children is the content between the Card tag
