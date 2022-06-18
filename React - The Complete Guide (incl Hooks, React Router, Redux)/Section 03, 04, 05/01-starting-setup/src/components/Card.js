@@ -1,5 +1,7 @@
 import './Card.css';
 
+// props.children is the content between the Card tag
+// props.className is the css styling used in what the Card tag is wrapping
 function Card(props) {
 	const classes = 'card ' + props.className;
 
