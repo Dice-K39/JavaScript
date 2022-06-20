@@ -26,6 +26,11 @@ const App = () => {
 		}
 	];
 
+	const addExpenseHandler = (expense) => {
+		console.log('In App.js');
+		console.log(expense);
+	};
+
 	// createElement: under the hood code when using JSX - takes 3 arguments
 	// 1 element that should be created
 	// 2 an object that configures this element
@@ -39,7 +44,7 @@ const App = () => {
 
 	return (
 		<div>
-			<NewExpense />
+			<NewExpense onAddExpense={addExpenseHandler} />
 			<Expenses expenses={expenses} />
 		</div>
 	);
