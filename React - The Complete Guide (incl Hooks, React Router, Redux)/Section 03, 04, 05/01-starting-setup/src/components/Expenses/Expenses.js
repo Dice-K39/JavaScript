@@ -7,9 +7,12 @@ import Card from '../UI/Card';
 import './Expenses.css';
 
 const Expenses = (props) => {
+	const selectedYearHandler = (selectedYear) => {
+		console.log(`In Expenses.js ${selectedYear}`);
+	};
 	return (
 		<Card className="expenses">
-			<ExpensesFilter />
+			<ExpensesFilter onSelectedYearChange={selectedYearHandler} />
 			<ExpenseItem
 				title={props.expenses[0].title}
 				amount={props.expenses[0].amount}
