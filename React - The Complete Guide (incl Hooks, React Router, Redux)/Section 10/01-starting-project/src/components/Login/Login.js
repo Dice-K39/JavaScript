@@ -49,24 +49,24 @@ const Login = (props) => {
 		};
 	}, []);
 
-	// useEffect(() => {
-	// 	const identifier = setTimeout(() => {
-	// 		console.log('Checking form validity');
+	useEffect(() => {
+		const identifier = setTimeout(() => {
+			console.log('Checking form validity');
 
-	// 		setFormIsValid(enteredEmail.includes('@') && enteredPassword.trim().length > 6);
-	// 	}, 500);
+			setFormIsValid(emailState.isValid && passwordState.isValid);
+		}, 500);
 
-	// 	return () => {
-	// 		console.log('Clean up');
+		return () => {
+			console.log('Clean up');
 
-	// 		clearTimeout(identifier);
-	// 	};
-	// }, [enteredEmail, enteredPassword]);
+			clearTimeout(identifier);
+		};
+	}, [emailState, passwordState]);
 
 	const emailChangeHandler = (event) => {
 		dispatchEmail({ type: 'USER_INPUT', value: event.target.value });
 
-		setFormIsValid(event.target.value.includes('@') && passwordState.isValid);
+		// setFormIsValid(event.target.value.includes('@') && passwordState.isValid);
 	};
 
 	const passwordChangeHandler = (event) => {
