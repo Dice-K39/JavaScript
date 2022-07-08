@@ -10,7 +10,7 @@ function App() {
 
 	return (
 		<>
-			<MainHeader onLogout={logoutHandler} />
+			<MainHeader />
 			<main>
 				{!ctx.isLoggedIn && <Login />}
 				{ctx.isLoggedIn && <Home />}
