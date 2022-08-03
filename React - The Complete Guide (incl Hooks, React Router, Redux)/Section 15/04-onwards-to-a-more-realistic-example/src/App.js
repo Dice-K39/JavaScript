@@ -6,6 +6,7 @@ import useHttp from './hooks/use-http';
 
 function App() {
 	const [tasks, setTasks] = useState([]);
+
 	const transformTasks = (tasksObj) => {
 		const loadedTasks = [];
 
@@ -20,7 +21,10 @@ function App() {
 		isLoading,
 		error,
 		sendRequest: fetchTasks
-	} = useHttp({ url: 'https://react-http-56a47-default-rtdb.firebaseio.com/' }, transformTasks);
+	} = useHttp(
+		{ url: 'https://react-http-56a47-default-rtdb.firebaseio.com/tasks.json' },
+		transformTasks
+	);
 
 	useEffect(() => {
 		fetchTasks();
