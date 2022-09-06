@@ -18,7 +18,6 @@ function App() {
 					<Route
 						path="/products"
 						element={<Products />}
-						exact
 					/>
 					<Route
 						path="/products/:productId"
