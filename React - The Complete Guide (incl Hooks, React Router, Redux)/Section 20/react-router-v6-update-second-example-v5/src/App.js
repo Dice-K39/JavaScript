@@ -16,7 +16,7 @@ function App() {
 						element={<Navigate to="/welcome" />}
 					/>
 					<Route
-						path="/welcome"
+						path="/welcome/*"
 						element={<Welcome />}
 					/>
 					<Route
