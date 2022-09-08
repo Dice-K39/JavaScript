@@ -5,6 +5,10 @@ import UserProfile from './components/Profile/UserProfile';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
 function App() {
 	return (
 		<Layout>
