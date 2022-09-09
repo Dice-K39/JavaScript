@@ -2,8 +2,6 @@ import { useState, useRef } from 'react';
 
 import classes from './AuthForm.module.css';
 
-require('dotenv').config();
-
 const AuthForm = () => {
 	const emailInputRef = useRef();
 	const passwordInputRef = useRef();
