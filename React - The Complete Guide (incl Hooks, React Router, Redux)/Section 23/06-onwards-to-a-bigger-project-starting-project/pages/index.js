@@ -21,6 +21,20 @@ function HomePage(props) {
 	return <MeetupList meetups={props.meetups} />;
 }
 
+// // reserved function name, does not run on the build process but always on the server after deployment
+// // good if page is updated multiple times in a second or need req and res data.
+// export async function getServerSideProps(context) {
+// 	const req = context.req;
+// 	const res = context.res;
+
+// 	// fetch data from an API
+// 	return {
+// 		props: {
+// 			meetups: DUMMY_MEETUPS
+// 		}
+// 	};
+// }
+
 // reserved function name, will not be visible to client side
 export async function getStaticProps() {
 	// fetch data from an API, database, etc.
