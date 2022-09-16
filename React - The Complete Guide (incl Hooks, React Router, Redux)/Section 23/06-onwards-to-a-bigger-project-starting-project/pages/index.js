@@ -27,7 +27,9 @@ export async function getStaticProps() {
 	return {
 		props: {
 			meetups: DUMMY_MEETUPS
-		}
+		},
+		// incremental static generation (number of seconds): reevaluates the site and updates it
+		revalidate: 1
 	};
 }
 
