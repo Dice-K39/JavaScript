@@ -12,6 +12,11 @@ export class RecipeListComponent implements OnInit {
 			'A Test Recipe',
 			'This is simply a test',
 			'https://www.thereciperebel.com/wp-content/uploads/2022/05/chicken-spaghetti-TRR-1200-24-of-49-568x498.jpg'
+		),
+		new Recipe(
+			'A Test Recipe',
+			'This is simply a test',
+			'https://www.thereciperebel.com/wp-content/uploads/2022/05/chicken-spaghetti-TRR-1200-24-of-49-568x498.jpg'
 		)
 	];
 
