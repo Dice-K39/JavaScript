@@ -13,10 +13,15 @@
 			#serverNameInput
 		/>
 		<label>Server Content</label>
-		<input
+		<!-- <input
 			type="text"
 			class="form-control"
 			[(ngModel)]="newServerContent"
+		/> -->
+		<input
+			type="text"
+			class="form-control"
+			#serverContentInput
 		/>
 		<br />
 		<button
