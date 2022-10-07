@@ -19,4 +19,8 @@ export class BetterHighlightDirective implements OnInit {
 		this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
 		this.renderer.setStyle(this.elRef.nativeElement, 'color', 'black');
 	}
+
+	@HostListener('click') click(eventData: Event) {
+		this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'red');
+	}
 }
