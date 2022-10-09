@@ -1,10 +1,11 @@
-import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
 	selector: '[appDropdown]'
 })
 export class DropdownDirective {
 	@HostBinding('class.open') isOpen = false;
+
 	constructor(private elRef: ElementRef) {}
 
 	// toggling dropdown when clicked on the dropdown menu itself
