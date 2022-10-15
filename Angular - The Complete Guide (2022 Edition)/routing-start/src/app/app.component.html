@@ -6,10 +6,10 @@
 					role="presentation"
 					class="active"
 				>
-					<a href="#">Home</a>
+					<a routerLink="/">Home</a>
 				</li>
-				<li role="presentation"><a href="#">Servers</a></li>
-				<li role="presentation"><a href="#">Users</a></li>
+				<li role="presentation"><a routerLink="/servers">Servers</a></li>
+				<li role="presentation"><a [routerLink]="['/users']">Users</a></li>
 			</ul>
 		</div>
 	</div>
