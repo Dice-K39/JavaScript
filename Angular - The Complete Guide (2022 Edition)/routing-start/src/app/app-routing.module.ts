@@ -40,6 +40,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+	// Helps in parsing when pushed to a live server
+	// imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
 	imports: [RouterModule.forRoot(appRoutes)],
 	exports: [RouterModule]
 })
