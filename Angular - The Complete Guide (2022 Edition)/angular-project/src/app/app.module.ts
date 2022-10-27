@@ -28,7 +28,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 		RecipesComponent,
 		DropdownDirective,
 		RecipeStartComponent,
-  RecipeEditComponent
+		RecipeEditComponent
 	],
 	imports: [BrowserModule, FormsModule, AppRoutingModule],
 	providers: [ShoppingListService],
