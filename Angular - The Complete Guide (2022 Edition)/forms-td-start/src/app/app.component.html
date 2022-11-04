@@ -35,6 +35,7 @@
 							email
 						/>
 					</div>
+					<p *ngIf="">Please enter a valid value!</p>
 				</div>
 				<div class="form-group">
 					<label for="secret">Secret Questions</label>
@@ -51,6 +52,7 @@
 				<button
 					class="btn btn-primary"
 					type="submit"
+					[disabled]="!f.valid"
 				>
 					Submit
 				</button>
