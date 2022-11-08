@@ -9,11 +9,30 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
 	@ViewChild('f', { static: false }) signupForm: NgForm;
 	defaultQuestion = 'teacher';
-    answer = '';
-    genders = ["male", "female"]
+	answer = '';
+	genders = ['male', 'female'];
 
 	suggestUserName() {
 		const suggestedName = 'Superuser';
+
+		// overwrites inputs
+		// need ngForm to use
+		// this.signupForm.setValue({
+		// 	userData: {
+		// 		username: suggestedName,
+		// 		email: ''
+		// 	},
+		// 	secret: 'pet',
+		// 	questionAnswer: '',
+		// 	gender: 'male'
+		// });
+
+		// better method
+		this.signupForm.form.patchValue({
+			userData: {
+				username: suggestedName
+			}
+		});
 	}
 
 	// onSubmit(form: NgForm) {
