@@ -5,5 +5,5 @@
 	"semi": true,
 	"singleQuote": true,
 	"trailingComma": "none",
-	"singleAttributePerLine": true
+	"singleAttributePerLine": false
 }
