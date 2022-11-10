@@ -13,6 +13,31 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
             -->
+			<form>
+				<div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" class="form-control" required email />
+					</div>
+				</div>
+				<div>
+					<div class="form-group">
+						<label for="subscription">Subscription</label>
+						<select class="form-control">
+							<option value="basic">Basic</option>
+							<option value="Advanced" selected>Advanced</option>
+							<option value="pro">Pro</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" id="password" class="form-control" required />
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 		</div>
 	</div>
 </div>
