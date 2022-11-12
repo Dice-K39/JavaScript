@@ -20,10 +20,12 @@
 						<input
 							type="email"
 							id="email"
+							name="email"
 							class="form-control"
 							required
 							email
 							ngModel
+							#email="ngModel"
 						/>
 					</div>
 					<span class="help-block" *ngIf="!email.valid && email.touched"
@@ -32,9 +34,15 @@
 
 					<div class="form-group">
 						<label for="subscription">Subscription</label>
-						<select class="form-control" id="secret" name="secret" ngModel>
+						<select
+							class="form-control"
+							id="subscription"
+							name="subscription"
+							[ngModel]="defaultSub"
+							ngModel
+						>
 							<option value="basic">Basic</option>
-							<option value="Advanced" selected>Advanced</option>
+							<option value="advanced">Advanced</option>
 							<option value="pro">Pro</option>
 						</select>
 					</div>
@@ -44,14 +52,29 @@
 						<input
 							type="password"
 							id="password"
+							name="password"
 							class="form-control"
 							ngModel
+							#password="ngModel"
+							password
 							required
 						/>
 					</div>
+					<span class="help-block" *ngIf="!password.valid && password.touched">
+						Please enter a password!
+					</span>
 				</div>
 				<button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 			</form>
 		</div>
+	</div>
+</div>
+<hr />
+<div class="row" *ngIf="submitted">
+	<div class="col-xs-12">
+		<h3>Data</h3>
+		<p>Email: {{ userInput.email }}</p>
+		<p>Subscription: {{ userInput.subscription }}</p>
+		<p>Password: {{ userInput.password }}</p>
 	</div>
 </div>
