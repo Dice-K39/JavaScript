@@ -29,12 +29,32 @@ export class AppComponent implements OnInit {
 			hobbies: new FormArray([])
 		});
 
-		// this.signupForm.valueChanges.subscribe((value) => console.log(value));
-		this.signupForm.statusChanges.subscribe((value) => console.log(value));
+		// this.signupForm.valueChanges.subscribe((value) => {
+		// 	console.log(value);
+		// });
+		this.signupForm.statusChanges.subscribe((value) => {
+			console.log(value);
+		});
+
+		this.signupForm.setValue({
+			userData: {
+				username: 'Dice',
+				email: 'dice@test.com'
+			},
+			gender: 'male',
+			hobbies: []
+		});
+		this.signupForm.patchValue({
+			userData: {
+				username: 'Ami'
+			},
+			gender: 'female'
+		});
 	}
 
 	onSubmit() {
 		console.log(this.signupForm);
+		this.signupForm.reset();
 	}
 
 	getHobbies() {
