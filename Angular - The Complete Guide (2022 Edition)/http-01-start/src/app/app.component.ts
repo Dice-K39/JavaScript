@@ -2,27 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  loadedPosts = [];
+	loadedPosts = [];
 
-  constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
+	ngOnInit() {}
 
-  onCreatePost(postData: { title: string; content: string }) {
-    // Send Http request
-    console.log(postData);
-  }
+	onCreatePost(postData: { title: string; content: string }) {
+		// Send Http request
+		console.log(postData);
+	}
 
-  onFetchPosts() {
-    // Send Http request
-  }
+	onFetchPosts() {
+		// Send Http request
+	}
 
-  onClearPosts() {
-    // Send Http request
-  }
+	onClearPosts() {
+		// Send Http request
+	}
 }
