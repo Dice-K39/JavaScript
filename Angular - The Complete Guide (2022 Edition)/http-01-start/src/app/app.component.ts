@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
+import { Post } from './post.model';
 
 @Component({
 	selector: 'app-root',
@@ -18,11 +19,13 @@ export class AppComponent implements OnInit {
 		this.fetchPosts();
 	}
 
-	onCreatePost(postData: { title: string; content: string }) {
+	onCreatePost(postData: Post) {
 		// Send Http request
-		this.http.post(`${environment.API_URL}/posts.json`, postData).subscribe((responseData) => {
-			console.log(responseData);
-		});
+		this.http
+			.post<{ name: string }>(`${environment.API_URL}/posts.json`, postData)
+			.subscribe((responseData) => {
+				console.log(responseData);
+			});
 	}
 
 	onFetchPosts() {
@@ -36,10 +39,10 @@ export class AppComponent implements OnInit {
 
 	private fetchPosts() {
 		this.http
-			.get(`${environment.API_URL}/posts.json`)
+			.get<{ [key: string]: Post }>(`${environment.API_URL}/posts.json`)
 			.pipe(
 				map((responseData) => {
-					const postsArray = [];
+					const postsArray: Post[] = [];
 
 					for (const key in responseData) {
 						if (responseData.hasOwnProperty(key)) {
