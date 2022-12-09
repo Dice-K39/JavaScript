@@ -4,19 +4,25 @@ import { map } from 'rxjs/operators';
 
 import { Post } from './post.model';
 import { environment } from '../environments/environment';
+import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
+	error = new Subject<string>();
+
 	constructor(private http: HttpClient) {}
 
 	createAndStorePost(title: string, content: string) {
 		const postData: Post = { title: title, content: content };
 
-		this.http
-			.post<{ name: string }>(`${environment.API_URL}/posts.json`, postData)
-			.subscribe((responseData) => {
+		this.http.post<{ name: string }>(`${environment.API_URL}/posts.json`, postData).subscribe(
+			(responseData) => {
 				console.log(responseData);
-			});
+			},
+			(error) => {
+				this.error.next(error.message);
+			}
+		);
 	}
 
 	fetchPosts() {
