@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, tap } from 'rxjs/operators';
 
 import { Post } from './post.model';
 import { environment } from '../environments/environment';
@@ -15,14 +15,21 @@ export class PostsService {
 	createAndStorePost(title: string, content: string) {
 		const postData: Post = { title: title, content: content };
 
-		this.http.post<{ name: string }>(`${environment.API_URL}/posts.json`, postData).subscribe(
-			(responseData) => {
-				console.log(responseData);
-			},
-			(error) => {
-				this.error.next(error.message);
-			}
-		);
+		this.http
+			.post<{ name: string }>(
+				`${environment.API_URL}/posts.json`,
+				postData /*, {
+				observe: 'response'
+			}*/
+			)
+			.subscribe(
+				(responseData) => {
+					console.log(responseData);
+				},
+				(error) => {
+					this.error.next(error.message);
+				}
+			);
 	}
 
 	fetchPosts() {
@@ -55,6 +62,21 @@ export class PostsService {
 	}
 
 	clearPosts() {
-		return this.http.delete(`${environment.API_URL}/posts.json`);
+		return this.http.delete(`${environment.API_URL}/posts.json`, {
+			observe: 'events'
+		});
+		// .pipe(
+		// 	tap((event) => {
+		// 		console.log(event);
+
+		// 		if (event.type === HttpEventType.Sent) {
+		// 			// ...
+		// 		}
+
+		// 		if (event.type === HttpEventType.Response) {
+		// 			console.log(event.body);
+		// 		}
+		// 	})
+		// );
 	}
 }
