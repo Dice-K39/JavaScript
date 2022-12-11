@@ -19,7 +19,8 @@ export class PostsService {
 			.post<{ name: string }>(
 				`${environment.API_URL}/posts.json`,
 				postData /*, {
-				observe: 'response'
+				observe: 'response',
+                responseType: "json"
 			}*/
 			)
 			.subscribe(
@@ -62,9 +63,12 @@ export class PostsService {
 	}
 
 	clearPosts() {
-		return this.http.delete(`${environment.API_URL}/posts.json`, {
-			observe: 'events'
-		});
+		return this.http.delete(
+			`${environment.API_URL}/posts.json` /*, {
+			observe: 'events',
+			responseType: 'text'
+		}*/
+		);
 		// .pipe(
 		// 	tap((event) => {
 		// 		console.log(event);
