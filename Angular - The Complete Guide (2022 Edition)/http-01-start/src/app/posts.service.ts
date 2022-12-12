@@ -16,13 +16,10 @@ export class PostsService {
 		const postData: Post = { title: title, content: content };
 
 		this.http
-			.post<{ name: string }>(
-				`${environment.API_URL}/posts.json`,
-				postData /*, {
+			.post<{ name: string }>(`${environment.API_URL}/posts.json`, postData, {
 				observe: 'response',
-                responseType: "json"
-			}*/
-			)
+				responseType: 'json'
+			})
 			.subscribe(
 				(responseData) => {
 					console.log(responseData);
@@ -63,24 +60,23 @@ export class PostsService {
 	}
 
 	clearPosts() {
-		return this.http.delete(
-			`${environment.API_URL}/posts.json` /*, {
-			observe: 'events',
-			responseType: 'text'
-		}*/
-		);
-		// .pipe(
-		// 	tap((event) => {
-		// 		console.log(event);
+		return this.http
+			.delete(`${environment.API_URL}/posts.json`, {
+				observe: 'events',
+				responseType: 'text'
+			})
+			.pipe(
+				tap((event) => {
+					console.log(event);
 
-		// 		if (event.type === HttpEventType.Sent) {
-		// 			// ...
-		// 		}
+					if (event.type === HttpEventType.Sent) {
+						// ...
+					}
 
-		// 		if (event.type === HttpEventType.Response) {
-		// 			console.log(event.body);
-		// 		}
-		// 	})
-		// );
+					if (event.type === HttpEventType.Response) {
+						console.log(event.body);
+					}
+				})
+			);
 	}
 }
