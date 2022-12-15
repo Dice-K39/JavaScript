@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { RecipeService } from '../recipes/recipe.service';
 import { environment } from '../../my-environment/environment';
+import { Recipe } from '../recipes/recipe.model';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
@@ -13,6 +14,12 @@ export class DataStorageService {
 
 		this.http.put(`${environment.API_URL}/recipes.json`, recipes).subscribe((response) => {
 			console.log(response);
+		});
+	}
+
+	fetchRecipes() {
+		this.http.get<Recipe[]>(`${environment.API_URL}/recipes.json`).subscribe((recipes) => {
+			this.recipeService.setRecipes(recipes);
 		});
 	}
 }
