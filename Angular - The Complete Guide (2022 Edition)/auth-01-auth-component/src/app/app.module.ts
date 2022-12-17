@@ -20,28 +20,22 @@ import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
-    AuthComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  providers: [ShoppingListService, RecipeService],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		RecipesComponent,
+		RecipeListComponent,
+		RecipeDetailComponent,
+		RecipeItemComponent,
+		ShoppingListComponent,
+		ShoppingEditComponent,
+		DropdownDirective,
+		RecipeStartComponent,
+		RecipeEditComponent,
+		AuthComponent
+	],
+	imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
+	providers: [ShoppingListService, RecipeService],
+	bootstrap: [AppComponent]
 })
 export class AppModule {}
