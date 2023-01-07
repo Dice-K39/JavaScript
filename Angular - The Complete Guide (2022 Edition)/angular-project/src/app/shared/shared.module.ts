@@ -21,5 +21,6 @@ import { PlaceholderDirective } from './placeholder/placeholder.directive';
 		DropdownDirective,
 		CommonModule
 	]
+	// entryComponents: [AlertComponent] // don't need for Angular 9 and up
 })
 export class SharedModule {}
