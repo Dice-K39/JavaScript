@@ -19,7 +19,6 @@ export interface AuthResponseData {
 
 @Injectable()
 export class AuthEffects {
-	@createEffect()
 	authLogin = this.actions$.pipe(
 		ofType(AuthActions.LOGIN_START),
 		switchMap((authData: AuthActions.LoginStart) => {
