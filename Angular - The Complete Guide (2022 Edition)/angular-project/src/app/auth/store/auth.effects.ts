@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { Router } from '@angular/router';
 
 import * as AuthActions from './auth.actions';
 import { environment } from '../../../my-environment/environment';
@@ -19,6 +20,7 @@ export interface AuthResponseData {
 
 @Injectable()
 export class AuthEffects {
+	@Effect()
 	authLogin = this.actions$.pipe(
 		ofType(AuthActions.LOGIN_START),
 		switchMap((authData: AuthActions.LoginStart) => {
@@ -37,14 +39,12 @@ export class AuthEffects {
 							new Date().getTime() + +resData.expiresIn * 1000
 						);
 
-						return of(
-							new AuthActions.Login({
-								email: resData.email,
-								userId: resData.localId,
-								token: resData.idToken,
-								expirationDate: expirationDate
-							})
-						);
+						return new AuthActions.Login({
+							email: resData.email,
+							userId: resData.localId,
+							token: resData.idToken,
+							expirationDate: expirationDate
+						});
 					}),
 					catchError((errorRes) => {
 						let errorMessage = 'An unknown error occurred!';
@@ -71,5 +71,13 @@ export class AuthEffects {
 		})
 	);
 
-	constructor(private actions$: Actions, private http: HttpClient) {}
+	@Effect({ dispatch: false })
+	authSuccess = this.actions$.pipe(
+		ofType(AuthActions.LOGIN),
+		tap(() => {
+			this.router.navigate(['/']);
+		})
+	);
+
+	constructor(private actions$: Actions, private http: HttpClient, private router: Router) {}
 }
