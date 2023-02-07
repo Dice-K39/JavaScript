@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 
 import * as AuthActions from './auth.actions';
 import { environment } from '../../../my-environment/environment';
+import { User } from '../user.model';
 
 export interface AuthResponseData {
 	kind: string;
@@ -20,6 +21,9 @@ export interface AuthResponseData {
 
 const handleAuthentication = (expiresIn: number, email: string, userId: string, token: string) => {
 	const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+	const user = new User(email, userId, token, expirationDate);
+
+	localStorage.setItem('userData', JSON.stringify(user));
 
 	return new AuthActions.AuthenticateSuccess({
 		email,
@@ -116,6 +120,14 @@ export class AuthEffects {
 		ofType(AuthActions.AUTHENTICATE_SUCCESS, AuthActions.LOGOUT),
 		tap(() => {
 			this.router.navigate(['/']);
+		})
+	);
+
+	@Effect({ dispatch: false })
+	authLogout = this.actions$.pipe(
+		ofType(AuthActions.LOGOUT),
+		tap(() => {
+			localStorage.removeItem('userData');
 		})
 	);
 
