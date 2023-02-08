@@ -1,6 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { User } from './user.model';
@@ -23,9 +21,16 @@ export class AuthService {
 
 	constructor(private store: Store<fromApp.AppState>) {}
 
-	autoLogout(expirationDuration: number) {
+	setLogoutTimer(expirationDuration: number) {
 		this.tokenExpirationTimer = setTimeout(() => {
-			this.logout();
+			this.store.dispatch(new AuthActions.Logout());
 		}, expirationDuration);
+	}
+
+	clearLogoutTimer() {
+		if (this.tokenExpirationTimer) {
+			clearTimeout(this.tokenExpirationTimer);
+			this.tokenExpirationTimer = null;
+		}
 	}
 }
