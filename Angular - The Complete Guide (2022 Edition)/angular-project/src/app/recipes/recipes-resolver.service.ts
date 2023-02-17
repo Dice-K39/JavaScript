@@ -6,21 +6,14 @@ import { of } from 'rxjs';
 import { take, map, switchMap } from 'rxjs/operators';
 
 import { Recipe } from './recipe.model';
-import { RecipeService } from './recipe.service';
 import * as fromApp from '../store/app.reducer';
 import * as RecipesActions from '../recipes/store/recipe.actions';
 
 @Injectable({ providedIn: 'root' })
 export class RecipesResolverService implements Resolve<Recipe[]> {
-	constructor(
-		private store: Store<fromApp.AppState>,
-		private recipesService: RecipeService,
-		private actions$: Actions
-	) {}
+	constructor(private store: Store<fromApp.AppState>, private actions$: Actions) {}
 
 	resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		const recipes = this.recipesService.getRecipes();
-
 		return this.store.select('recipes').pipe(
 			take(1),
 			map((recipesState) => {
